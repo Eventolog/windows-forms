@@ -15,54 +15,22 @@ namespace Eventology
 
         private void buttonInit_Click(object sender, System.EventArgs e)
         {
-            HomeForm homeForm = new HomeForm();
-            homeForm.TopLevel = false;
-            homeForm.FormBorderStyle = FormBorderStyle.None;
-
-            homeForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Clear();
-
-            mainPanel.Controls.Add(homeForm);
-            homeForm.Show();
+            SwitchForm(new HomeForm());
         }
 
         private void buttonEvents_Click(object sender, System.EventArgs e)
         {
-            EventsForm eventForm = new EventsForm();
-            eventForm.TopLevel = false;
-            eventForm.FormBorderStyle = FormBorderStyle.None;
-
-            eventForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Clear();
-
-            mainPanel.Controls.Add(eventForm);
-            eventForm.Show();
+            SwitchForm(new EventsForm());
         }
 
         private void buttonRooms_Click(object sender, System.EventArgs e)
         {
-            RoomsForm roomForm = new RoomsForm();
-            roomForm.TopLevel = false;
-            roomForm.FormBorderStyle = FormBorderStyle.None;
-
-            roomForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Clear();
-
-            mainPanel.Controls.Add(roomForm);
-            roomForm.Show();
+            SwitchForm(new RoomsForm());
         }
 
         private void buttonUsers_Click(object sender, System.EventArgs e)
         {
-            UsersForm userForm = new UsersForm();
-            userForm.TopLevel = false;
-            userForm.FormBorderStyle = FormBorderStyle.None;
-
-            userForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Clear();
-
-            mainPanel.Controls.Add(userForm);
-            userForm.Show();
+            SwitchForm(new UsersForm());
         }
 
         private void buttonExit_Click(object sender, System.EventArgs e)
@@ -84,6 +52,21 @@ namespace Eventology
 
             mainPanel.Controls.Add(loginForm);
             loginForm.Show();
+        }
+
+        private void SwitchForm(Form newForm)
+        {
+            mainPanel.SuspendLayout();
+
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            newForm.Dock = DockStyle.Fill;
+
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(newForm);
+            newForm.Show();
+
+            mainPanel.ResumeLayout();
         }
     }
 }
