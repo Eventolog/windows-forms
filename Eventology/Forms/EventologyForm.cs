@@ -20,6 +20,7 @@ namespace Eventology
             homeForm.FormBorderStyle = FormBorderStyle.None;
 
             homeForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
 
             mainPanel.Controls.Add(homeForm);
             homeForm.Show();
@@ -32,6 +33,7 @@ namespace Eventology
             eventForm.FormBorderStyle = FormBorderStyle.None;
 
             eventForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
 
             mainPanel.Controls.Add(eventForm);
             eventForm.Show();
@@ -44,6 +46,7 @@ namespace Eventology
             roomForm.FormBorderStyle = FormBorderStyle.None;
 
             roomForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
 
             mainPanel.Controls.Add(roomForm);
             roomForm.Show();
@@ -56,6 +59,7 @@ namespace Eventology
             userForm.FormBorderStyle = FormBorderStyle.None;
 
             userForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Clear();
 
             mainPanel.Controls.Add(userForm);
             userForm.Show();
