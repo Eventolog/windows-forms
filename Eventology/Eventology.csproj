@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Eventology.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Eventology.Designer.cs">
+      <DependentUpon>Eventology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Eventology.resx">
+      <DependentUpon>Eventology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +74,47 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Resources\Fonts\Futura\futur.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Bold font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Bold Italic font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Book font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Book Italic font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Extra Black font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Heavy font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Heavy Italic font.ttf" />
+    <None Include="Resources\Fonts\Futura\futura light bt.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Light font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Light Italic font.ttf" />
+    <None Include="Resources\Fonts\Futura\futura medium bt.ttf" />
+    <None Include="Resources\Fonts\Futura\futura medium condensed bt.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura Medium Italic font.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura XBlk BT.ttf" />
+    <None Include="Resources\Fonts\Futura\Futura-CondensedLight.otf" />
+    <None Include="Resources\Fonts\Futura\tt0205m_.ttf" />
+    <None Include="Resources\Fonts\Futura\unicode.futurab.ttf" />
+    <None Include="Resources\Fonts\Futura\unicode.futurabb.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Black.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-BlackItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Bold.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-BoldItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-ExtraBold.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-ExtraBoldItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-ExtraLight.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-ExtraLightItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Italic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Light.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-LightItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Medium.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-MediumItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Regular.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-SemiBold.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-SemiBoldItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-Thin.ttf" />
+    <None Include="Resources\Fonts\Work Sans\static\WorkSans-ThinItalic.ttf" />
+    <None Include="Resources\Fonts\Work Sans\WorkSans-Italic-VariableFont_wght.ttf" />
+    <None Include="Resources\Fonts\Work Sans\WorkSans-VariableFont_wght.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +127,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Languages\" />
+    <Folder Include="Models\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Fonts\Futura\sharefonts.net.txt" />
+    <Content Include="Resources\Fonts\Work Sans\OFL.txt" />
+    <Content Include="Resources\Fonts\Work Sans\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
