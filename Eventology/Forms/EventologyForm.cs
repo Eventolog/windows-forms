@@ -8,6 +8,8 @@ namespace Eventology
         public EventologyForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             ShowLoginForm();
         }
 
@@ -61,7 +63,7 @@ namespace Eventology
 
         private void buttonExit_Click(object sender, System.EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }
