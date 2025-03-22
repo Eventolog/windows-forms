@@ -6,6 +6,8 @@ namespace Eventology
 {
     public partial class EventologyForm : Form
     {
+        private Button selectedButton = null;
+
         public EventologyForm()
         {
             InitializeComponent();
@@ -40,6 +42,22 @@ namespace Eventology
             if (MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void button_Paint(object sender, PaintEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                // Dibuixar la línia sota del botó seleccionat o quan el ratolí passi per sobre
+                if (button == selectedButton || button.ClientRectangle.Contains(button.PointToClient(MousePosition)))
+                {
+                    using (Pen pen = new Pen(Color.Red, 2))  // Canvia el color i grosor si vols
+                    {
+                        e.Graphics.DrawLine(pen, 0, button.Height - 1, button.Width, button.Height - 1);
+                    }
+                }
             }
         }
 
@@ -82,8 +100,39 @@ namespace Eventology
                     button.BackColor = this.BackColor;
                     button.ForeColor = Color.Black;
                     button.Cursor = Cursors.Hand;
+
+                    button.Paint += button_Paint;
+
+                    button.MouseEnter += (s, e) =>
+                    {
+                        button.Invalidate();  // Dibuixar la línia sota del botó quan el ratolí entra
+                    };
+
+                    button.MouseLeave += (s, e) =>
+                    {
+                        button.Invalidate();  // Dibuixar la línia sota del botó quan el ratolí surt
+                    };
+
+                    // Afegir esdeveniment de clic per establir la línia sota
+                    button.Click += (s, e) =>
+                    {
+                        SetSelectedButton(button);
+                    };
                 }
             }
+        }
+
+        private void SetSelectedButton(Button button)
+        {
+            // Eliminar línia sota de l'anterior botó seleccionat
+            if (selectedButton != null)
+            {
+                selectedButton.Invalidate();
+            }
+
+            selectedButton = button;
+
+            button.Invalidate();
         }
     }
 }

@@ -34,6 +34,9 @@
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonEvents = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelSeparation = new System.Windows.Forms.Label();
+            this.labelSeparation2 = new System.Windows.Forms.Label();
+            this.labelSeparation3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -96,11 +99,41 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // labelSeparation
+            // 
+            this.labelSeparation.AutoSize = true;
+            this.labelSeparation.Location = new System.Drawing.Point(127, 17);
+            this.labelSeparation.Name = "labelSeparation";
+            this.labelSeparation.Size = new System.Drawing.Size(9, 13);
+            this.labelSeparation.TabIndex = 6;
+            this.labelSeparation.Text = "|";
+            // 
+            // labelSeparation2
+            // 
+            this.labelSeparation2.AutoSize = true;
+            this.labelSeparation2.Location = new System.Drawing.Point(267, 17);
+            this.labelSeparation2.Name = "labelSeparation2";
+            this.labelSeparation2.Size = new System.Drawing.Size(9, 13);
+            this.labelSeparation2.TabIndex = 7;
+            this.labelSeparation2.Text = "|";
+            // 
+            // labelSeparation3
+            // 
+            this.labelSeparation3.AutoSize = true;
+            this.labelSeparation3.Location = new System.Drawing.Point(398, 17);
+            this.labelSeparation3.Name = "labelSeparation3";
+            this.labelSeparation3.Size = new System.Drawing.Size(9, 13);
+            this.labelSeparation3.TabIndex = 8;
+            this.labelSeparation3.Text = "|";
+            // 
             // EventologyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 591);
+            this.Controls.Add(this.labelSeparation3);
+            this.Controls.Add(this.labelSeparation2);
+            this.Controls.Add(this.labelSeparation);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonEvents);
             this.Controls.Add(this.buttonUsers);
@@ -110,6 +143,7 @@
             this.Name = "EventologyForm";
             this.Text = "Eventology";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -121,6 +155,9 @@
         private System.Windows.Forms.Button buttonUsers;
         private System.Windows.Forms.Button buttonEvents;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelSeparation;
+        private System.Windows.Forms.Label labelSeparation2;
+        private System.Windows.Forms.Label labelSeparation3;
     }
 }
 
