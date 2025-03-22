@@ -182,6 +182,8 @@ namespace Eventology
         {
             ToggleButtons(true);
             SwitchForm(new HomeForm());
+
+            this.ActiveControl = null;
         }
     }
 }

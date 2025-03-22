@@ -62,7 +62,7 @@
             this.buttonRooms.Location = new System.Drawing.Point(282, 5);
             this.buttonRooms.Name = "buttonRooms";
             this.buttonRooms.Size = new System.Drawing.Size(75, 23);
-            this.buttonRooms.TabIndex = 2;
+            this.buttonRooms.TabIndex = 3;
             this.buttonRooms.Text = "Sales";
             this.buttonRooms.UseVisualStyleBackColor = true;
             this.buttonRooms.Click += new System.EventHandler(this.buttonRooms_Click);
@@ -72,7 +72,7 @@
             this.buttonUsers.Location = new System.Drawing.Point(412, 5);
             this.buttonUsers.Name = "buttonUsers";
             this.buttonUsers.Size = new System.Drawing.Size(75, 23);
-            this.buttonUsers.TabIndex = 3;
+            this.buttonUsers.TabIndex = 4;
             this.buttonUsers.Text = "Usuaris";
             this.buttonUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonUsers.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.buttonEvents.Location = new System.Drawing.Point(144, 5);
             this.buttonEvents.Name = "buttonEvents";
             this.buttonEvents.Size = new System.Drawing.Size(93, 23);
-            this.buttonEvents.TabIndex = 4;
+            this.buttonEvents.TabIndex = 2;
             this.buttonEvents.Text = "Esdeveniments";
             this.buttonEvents.UseVisualStyleBackColor = true;
             this.buttonEvents.Click += new System.EventHandler(this.buttonEvents_Click);

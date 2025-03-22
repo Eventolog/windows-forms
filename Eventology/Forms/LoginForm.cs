@@ -48,7 +48,7 @@ namespace Eventology.Forms
             }
             else
             {
-                MessageBox.Show("Credencials incorrectes. Torna-ho a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Credencials incorrectes. Torna-ho a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
