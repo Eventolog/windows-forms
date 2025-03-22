@@ -1,6 +1,6 @@
 ﻿namespace Eventology.Forms
 {
-    partial class Events
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Events
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1065, 505);
-            this.Name = "Events";
-            this.Text = "Events";
+            this.Name = "Home";
+            this.Text = "Home";
             this.ResumeLayout(false);
 
         }

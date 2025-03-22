@@ -16,7 +16,7 @@ namespace Eventology
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Eventology());
+            Application.Run(new EventologyForm());
         }
     }
 }

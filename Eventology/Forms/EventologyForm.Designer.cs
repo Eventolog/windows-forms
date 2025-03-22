@@ -1,6 +1,6 @@
 ﻿namespace Eventology
 {
-    partial class Eventology
+    partial class EventologyForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -33,11 +33,12 @@
             this.buttonRooms = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonEvents = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 46);
+            this.mainPanel.Location = new System.Drawing.Point(0, 47);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1081, 544);
             this.mainPanel.TabIndex = 0;
@@ -50,6 +51,7 @@
             this.buttonInit.TabIndex = 1;
             this.buttonInit.Text = "Inici";
             this.buttonInit.UseVisualStyleBackColor = true;
+            this.buttonInit.Click += new System.EventHandler(this.buttonInit_Click);
             // 
             // buttonRooms
             // 
@@ -59,6 +61,7 @@
             this.buttonRooms.TabIndex = 2;
             this.buttonRooms.Text = "Sales";
             this.buttonRooms.UseVisualStyleBackColor = true;
+            this.buttonRooms.Click += new System.EventHandler(this.buttonRooms_Click);
             // 
             // buttonUsers
             // 
@@ -69,6 +72,7 @@
             this.buttonUsers.Text = "Usuaris";
             this.buttonUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
             // buttonEvents
             // 
@@ -78,18 +82,31 @@
             this.buttonEvents.TabIndex = 4;
             this.buttonEvents.Text = "Esdeveniments";
             this.buttonEvents.UseVisualStyleBackColor = true;
+            this.buttonEvents.Click += new System.EventHandler(this.buttonEvents_Click);
             // 
-            // Eventology
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(985, 12);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.TabIndex = 5;
+            this.buttonExit.Text = "Sortir";
+            this.buttonExit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // EventologyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 591);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonEvents);
             this.Controls.Add(this.buttonUsers);
             this.Controls.Add(this.buttonRooms);
             this.Controls.Add(this.buttonInit);
             this.Controls.Add(this.mainPanel);
-            this.Name = "Eventology";
+            this.Name = "EventologyForm";
             this.Text = "Eventology";
             this.ResumeLayout(false);
 
@@ -102,6 +119,7 @@
         private System.Windows.Forms.Button buttonRooms;
         private System.Windows.Forms.Button buttonUsers;
         private System.Windows.Forms.Button buttonEvents;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

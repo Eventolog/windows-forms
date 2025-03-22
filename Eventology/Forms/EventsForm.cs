@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Eventology.Forms
 {
-    public partial class Rooms : Form
+    public partial class EventsForm : Form
     {
-        public Rooms()
+        public EventsForm()
         {
             InitializeComponent();
         }
