@@ -12,6 +12,7 @@ namespace Eventology
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += EventologyForm_FormClosing;
 
             CustomizeButtons();
             ShowLoginForm();
@@ -39,11 +40,15 @@ namespace Eventology
 
         private void buttonExit_Click(object sender, System.EventArgs e)
         {
+            SetSelectedButton(null);
             this.ActiveControl = null;
 
-            if (MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Estàs segur que vols tancar la sessió?", "Sortir", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Application.Exit();
+                SetSelectedButton(null);
+                this.ActiveControl = null;
+
+                SwitchForm(new LoginForm());
             }
         }
 
@@ -52,10 +57,10 @@ namespace Eventology
             Button button = sender as Button;
             if (button != null)
             {
-                // Dibuixar la línia sota del botó seleccionat o quan el ratolí passi per sobre
+                // Dibuixa la línia sota del botó seleccionat o quan el ratolí passi per sobre
                 if (button == selectedButton || button.ClientRectangle.Contains(button.PointToClient(MousePosition)))
                 {
-                    using (Pen pen = new Pen(Color.Red, 2))  // Canvia el color i grosor si vols
+                    using (Pen pen = new Pen(Color.Red, 2))
                     {
                         e.Graphics.DrawLine(pen, 0, button.Height - 1, button.Width, button.Height - 1);
                     }
@@ -109,15 +114,14 @@ namespace Eventology
 
                     button.MouseEnter += (s, e) =>
                     {
-                        button.Invalidate();  // Dibuixar la línia sota del botó quan el ratolí entra
+                        button.Invalidate();
                     };
 
                     button.MouseLeave += (s, e) =>
                     {
-                        button.Invalidate();  // Dibuixar la línia sota del botó quan el ratolí surt
+                        button.Invalidate();
                     };
 
-                    // Afegir esdeveniment de clic per establir la línia sota
                     button.Click += (s, e) =>
                     {
                         SetSelectedButton(button);
@@ -128,7 +132,6 @@ namespace Eventology
 
         private void SetSelectedButton(Button button)
         {
-            // Eliminar línia sota de l'anterior botó seleccionat
             if (selectedButton != null)
             {
                 selectedButton.Invalidate();
@@ -136,7 +139,20 @@ namespace Eventology
 
             selectedButton = button;
 
-            button.Invalidate();
+            if (selectedButton != null)
+            {
+                selectedButton.Invalidate();
+            }
+        }
+
+        private void EventologyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
