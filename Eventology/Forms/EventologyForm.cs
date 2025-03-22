@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 using Eventology.Forms;
 
 namespace Eventology
@@ -10,6 +11,7 @@ namespace Eventology
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            CustomizeButtons();
             ShowLoginForm();
         }
 
@@ -67,6 +69,21 @@ namespace Eventology
             newForm.Show();
 
             mainPanel.ResumeLayout();
+        }
+
+        private void CustomizeButtons()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button button)
+                {
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.BorderSize = 0;
+                    button.BackColor = this.BackColor;
+                    button.ForeColor = Color.Black;
+                    button.Cursor = Cursors.Hand;
+                }
+            }
         }
     }
 }

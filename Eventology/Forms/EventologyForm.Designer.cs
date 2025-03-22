@@ -45,12 +45,13 @@
             // 
             // buttonInit
             // 
+            this.buttonInit.BackColor = System.Drawing.Color.Transparent;
             this.buttonInit.Location = new System.Drawing.Point(30, 12);
             this.buttonInit.Name = "buttonInit";
             this.buttonInit.Size = new System.Drawing.Size(75, 23);
             this.buttonInit.TabIndex = 1;
             this.buttonInit.Text = "Inici";
-            this.buttonInit.UseVisualStyleBackColor = true;
+            this.buttonInit.UseVisualStyleBackColor = false;
             this.buttonInit.Click += new System.EventHandler(this.buttonInit_Click);
             // 
             // buttonRooms
