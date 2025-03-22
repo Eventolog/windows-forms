@@ -41,7 +41,7 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Location = new System.Drawing.Point(0, 47);
+            this.mainPanel.Location = new System.Drawing.Point(0, 32);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1081, 544);
             this.mainPanel.TabIndex = 0;
@@ -49,7 +49,7 @@
             // buttonInit
             // 
             this.buttonInit.BackColor = System.Drawing.Color.Transparent;
-            this.buttonInit.Location = new System.Drawing.Point(30, 12);
+            this.buttonInit.Location = new System.Drawing.Point(17, 5);
             this.buttonInit.Name = "buttonInit";
             this.buttonInit.Size = new System.Drawing.Size(75, 23);
             this.buttonInit.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // buttonRooms
             // 
-            this.buttonRooms.Location = new System.Drawing.Point(295, 12);
+            this.buttonRooms.Location = new System.Drawing.Point(282, 5);
             this.buttonRooms.Name = "buttonRooms";
             this.buttonRooms.Size = new System.Drawing.Size(75, 23);
             this.buttonRooms.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // buttonUsers
             // 
-            this.buttonUsers.Location = new System.Drawing.Point(431, 12);
+            this.buttonUsers.Location = new System.Drawing.Point(412, 5);
             this.buttonUsers.Name = "buttonUsers";
             this.buttonUsers.Size = new System.Drawing.Size(75, 23);
             this.buttonUsers.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // buttonEvents
             // 
-            this.buttonEvents.Location = new System.Drawing.Point(157, 12);
+            this.buttonEvents.Location = new System.Drawing.Point(144, 5);
             this.buttonEvents.Name = "buttonEvents";
             this.buttonEvents.Size = new System.Drawing.Size(93, 23);
             this.buttonEvents.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(985, 12);
+            this.buttonExit.Location = new System.Drawing.Point(985, 5);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 5;
@@ -102,7 +102,7 @@
             // labelSeparation
             // 
             this.labelSeparation.AutoSize = true;
-            this.labelSeparation.Location = new System.Drawing.Point(127, 17);
+            this.labelSeparation.Location = new System.Drawing.Point(114, 10);
             this.labelSeparation.Name = "labelSeparation";
             this.labelSeparation.Size = new System.Drawing.Size(9, 13);
             this.labelSeparation.TabIndex = 6;
@@ -111,7 +111,7 @@
             // labelSeparation2
             // 
             this.labelSeparation2.AutoSize = true;
-            this.labelSeparation2.Location = new System.Drawing.Point(267, 17);
+            this.labelSeparation2.Location = new System.Drawing.Point(254, 10);
             this.labelSeparation2.Name = "labelSeparation2";
             this.labelSeparation2.Size = new System.Drawing.Size(9, 13);
             this.labelSeparation2.TabIndex = 7;
@@ -120,7 +120,7 @@
             // labelSeparation3
             // 
             this.labelSeparation3.AutoSize = true;
-            this.labelSeparation3.Location = new System.Drawing.Point(398, 17);
+            this.labelSeparation3.Location = new System.Drawing.Point(379, 10);
             this.labelSeparation3.Name = "labelSeparation3";
             this.labelSeparation3.Size = new System.Drawing.Size(9, 13);
             this.labelSeparation3.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 591);
+            this.ClientSize = new System.Drawing.Size(1081, 576);
             this.Controls.Add(this.labelSeparation3);
             this.Controls.Add(this.labelSeparation2);
             this.Controls.Add(this.labelSeparation);

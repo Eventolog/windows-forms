@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Eventology.Forms;
 
@@ -11,11 +12,11 @@ namespace Eventology
         public EventologyForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormClosing += EventologyForm_FormClosing;
 
+            CustomizeWindow();
             CustomizeButtons();
             ShowLoginForm();
+            ToggleButtons(false);
         }
 
         private void buttonInit_Click(object sender, System.EventArgs e)
@@ -48,7 +49,9 @@ namespace Eventology
                 SetSelectedButton(null);
                 this.ActiveControl = null;
 
-                SwitchForm(new LoginForm());
+                // Deshabilitar botons abans de mostrar el formulari de login
+                ToggleButtons(false);
+                ShowLoginForm();
             }
         }
 
@@ -57,7 +60,7 @@ namespace Eventology
             Button button = sender as Button;
             if (button != null)
             {
-                // Dibuixa la línia sota del botó seleccionat o quan el ratolí passi per sobre
+                // Dibuixar la línia sota del botó seleccionat o quan el ratolí passi per sobre
                 if (button == selectedButton || button.ClientRectangle.Contains(button.PointToClient(MousePosition)))
                 {
                     using (Pen pen = new Pen(Color.Red, 2))
@@ -68,15 +71,25 @@ namespace Eventology
             }
         }
 
+        private void EventologyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
         private void ShowLoginForm()
         {
             LoginForm loginForm = new LoginForm();
             loginForm.TopLevel = false;
             loginForm.FormBorderStyle = FormBorderStyle.None;
-
             loginForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Clear();
+            loginForm.LoginSuccessful += OnLoginSuccessful;
 
+            mainPanel.Controls.Clear();
             mainPanel.Controls.Add(loginForm);
             loginForm.Show();
         }
@@ -145,14 +158,30 @@ namespace Eventology
             }
         }
 
-        private void EventologyForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void CustomizeWindow()
         {
-            DialogResult result = MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormClosing += EventologyForm_FormClosing;
 
-            if (result == DialogResult.No)
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+        }
+
+        private void ToggleButtons(bool enable)
+        {
+            foreach (Control control in this.Controls)
             {
-                e.Cancel = true;
+                if (control is Button button)
+                {
+                    button.Enabled = enable;
+                }
             }
+        }
+
+        private void OnLoginSuccessful(object sender, EventArgs e)
+        {
+            ToggleButtons(true);
+            SwitchForm(new HomeForm());
         }
     }
 }

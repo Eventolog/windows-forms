@@ -176,6 +176,7 @@
     <Content Include="Resources\Fonts\Futura\sharefonts.net.txt" />
     <Content Include="Resources\Fonts\Work Sans\OFL.txt" />
     <Content Include="Resources\Fonts\Work Sans\README.txt" />
+    <EmbeddedResource Include="Resources\Images\gencat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
