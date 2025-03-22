@@ -39,6 +39,8 @@ namespace Eventology
 
         private void buttonExit_Click(object sender, System.EventArgs e)
         {
+            this.ActiveControl = null;
+
             if (MessageBox.Show("Estàs segur que vols sortir?", "Sortir", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
@@ -96,6 +98,8 @@ namespace Eventology
                 if (control is Button button)
                 {
                     button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.MouseOverBackColor = button.BackColor;
+                    button.FlatAppearance.MouseDownBackColor = button.BackColor;
                     button.FlatAppearance.BorderSize = 0;
                     button.BackColor = this.BackColor;
                     button.ForeColor = Color.Black;
