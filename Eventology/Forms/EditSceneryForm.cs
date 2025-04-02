@@ -21,6 +21,7 @@ namespace Eventology.Forms
         private int? alignmentLineRight = null;
         private int? alignmentLineBottom = null;
         private int seatsAmount = 0;
+        private int seatsExistingAmount = 0;
 
         public EditSceneryForm()
         {
@@ -48,6 +49,7 @@ namespace Eventology.Forms
                     {
                         Seat seat = (Seat)elem;
                         lastSelectedSeat = seat;
+                        inputPriceEdit.Value = seat.Price;
                         selectedElement = elem;
                         offset = new Point(e.X - elem.Bounds.X, e.Y - elem.Bounds.Y);
                         break;
@@ -140,7 +142,6 @@ namespace Eventology.Forms
                 alignmentLineRight = null;
                 alignmentLineBottom = null;
                 Render();
-                GenerateJSON();
             }
         }
 
@@ -155,29 +156,29 @@ namespace Eventology.Forms
                 foreach (var elem in elements)
                 {
                     Color fillColor;
+                    string overlayText = null; // Text to draw over element
+                    Font overlayFont = new Font("Arial", 10, FontStyle.Bold);
+                    Brush textBrush = Brushes.White;
 
                     if (elem.Type == ElementTypes.Seat)
                     {
                         var seat = (Seat)elem;
-                        if (lastSelectedSeat != null)
+                        if (lastSelectedSeat != null && seat.Id == lastSelectedSeat.Id)
                         {
-                            // Check if this seat is the last selected seat
-                            if (seat.Id == lastSelectedSeat.Id)
+                            // Draw a white border around the selected seat
+                            using (Pen borderPen = new Pen(Color.White, 3)) // 3 pixels width
                             {
-                                // Draw a white border around the selected seat
-                                using (Pen borderPen = new Pen(Color.White, 3))  // 3 pixels width for the border
-                                {
-                                    g.DrawRectangle(borderPen, seat.Bounds);
-                                }
+                                g.DrawRectangle(borderPen, seat.Bounds);
                             }
                         }
-                        
 
-                        fillColor = Color.Red;  // Seat color
+                        fillColor = Color.Red;
+                        overlayText = $"${seat.Price:F2}";  // Show seat price
                     }
                     else if (elem.Type == ElementTypes.Scenery)
                     {
-                        fillColor = Color.DarkBlue;  // Scenery color
+                        fillColor = Color.DarkBlue;
+                        overlayText = "Escenari";
                     }
                     else
                     {
@@ -188,7 +189,19 @@ namespace Eventology.Forms
                     {
                         g.FillRectangle(brush, elem.Bounds);
                     }
+
+                    // Draw text if available
+                    if (!string.IsNullOrEmpty(overlayText))
+                    {
+                        // Center the text
+                        SizeF textSize = g.MeasureString(overlayText, overlayFont);
+                        float textX = elem.Bounds.X + (elem.Bounds.Width - textSize.Width) / 2;
+                        float textY = elem.Bounds.Y + (elem.Bounds.Height - textSize.Height) / 2;
+
+                        g.DrawString(overlayText, overlayFont, textBrush, textX, textY);
+                    }
                 }
+
 
                 // Draw alignment lines if they exist
                 using (Pen pen = new Pen(Color.Green, 2))
@@ -207,6 +220,7 @@ namespace Eventology.Forms
                 }
             }
             roomPictureBox.Image = bmp;
+            GenerateJSON();
         }
 
         private void GenerateJSON()
@@ -242,9 +256,11 @@ namespace Eventology.Forms
         private void btnAddSeat_Click(object sender, EventArgs e)
         {
             seatsAmount += 1;
+            seatsExistingAmount += 1;
             int seatId = seatsAmount;
             decimal price = numericPrice.Value;
             Element seat = new Seat(new Rectangle(150, 150, 30, 30), price, seatId);
+            qtySeat.Text = seatsExistingAmount.ToString();
             elements.Add(seat);
             Render();
         }
@@ -261,7 +277,10 @@ namespace Eventology.Forms
             if (confirm)
             {
                RemoveSeatById(lastSelectedSeat.Id);
+                seatsExistingAmount -= 1;
                 lastSelectedSeat = null;
+                qtySeat.Text = seatsExistingAmount.ToString();
+
                 // selectedElement is a Seat
                 Render();
             }
@@ -277,6 +296,8 @@ namespace Eventology.Forms
             {
                 // Remove the found seat from the elements collection
                 elements.Remove(seatToRemove);
+                lastSelectedSeat = null;
+                inputPriceEdit.Value = 0;
                 Console.WriteLine($"Seat with ID {seatId} has been removed.");
             }
             else
@@ -285,6 +306,19 @@ namespace Eventology.Forms
             }
         }
 
+        private void editSeat_Click(object sender, EventArgs e)
+        {
+            if (lastSelectedSeat != null)
+            {
+                decimal price = inputPriceEdit.Value;
+                lastSelectedSeat.Price = price;
+                Render();
+            }
+            else
+            {
+                MessageBoxUtility.ShowError("No has seleccionat cap butaca per editar");
+            }
+        }
     }
 }
 
