@@ -34,8 +34,14 @@
             this.numericPrice = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.deleteSeat = new System.Windows.Forms.Button();
+            this.lblEditSeat = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.qtySeat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.roomPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddSeat
@@ -76,7 +82,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(462, 149);
+            this.textBox1.Location = new System.Drawing.Point(444, 512);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 5;
@@ -87,15 +93,64 @@
             this.deleteSeat.Name = "deleteSeat";
             this.deleteSeat.Size = new System.Drawing.Size(132, 41);
             this.deleteSeat.TabIndex = 6;
-            this.deleteSeat.Text = "Eliminar element";
+            this.deleteSeat.Text = "Eliminar butaca";
             this.deleteSeat.UseVisualStyleBackColor = true;
             this.deleteSeat.Click += new System.EventHandler(this.deleteSeat_Click);
+            // 
+            // lblEditSeat
+            // 
+            this.lblEditSeat.AutoSize = true;
+            this.lblEditSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditSeat.Location = new System.Drawing.Point(441, 132);
+            this.lblEditSeat.Name = "lblEditSeat";
+            this.lblEditSeat.Size = new System.Drawing.Size(106, 20);
+            this.lblEditSeat.TabIndex = 7;
+            this.lblEditSeat.Text = "Editar Butaca";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(445, 193);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(441, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Preu butaca seleccionada";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(441, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Quantitat butaques:";
+            // 
+            // qtySeat
+            // 
+            this.qtySeat.AutoSize = true;
+            this.qtySeat.Location = new System.Drawing.Point(536, 86);
+            this.qtySeat.Name = "qtySeat";
+            this.qtySeat.Size = new System.Drawing.Size(13, 13);
+            this.qtySeat.TabIndex = 11;
+            this.qtySeat.Text = "0";
             // 
             // EditSceneryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.qtySeat);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.lblEditSeat);
             this.Controls.Add(this.deleteSeat);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.numericPrice);
@@ -106,6 +161,7 @@
             this.Text = "Editor d\'escenaris";
             ((System.ComponentModel.ISupportInitialize)(this.roomPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +175,10 @@
         private System.Windows.Forms.NumericUpDown numericPrice;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button deleteSeat;
+        private System.Windows.Forms.Label lblEditSeat;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label qtySeat;
     }
 }

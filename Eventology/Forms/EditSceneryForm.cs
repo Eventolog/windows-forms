@@ -265,6 +265,7 @@ namespace Eventology.Forms
                 // selectedElement is a Seat
                 Render();
             }
+
         }
 
         private void RemoveSeatById(int seatId)
