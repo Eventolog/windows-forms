@@ -1,8 +1,4 @@
-﻿using Eventology.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Eventology
@@ -18,7 +14,7 @@ namespace Eventology
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new EventologyForm());
-            Application.Run(new EditSceneryForm());
+            Application.Run(new EventologyForm());
         }
     }
 }
