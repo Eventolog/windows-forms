@@ -67,6 +67,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -135,6 +136,54 @@
     <Compile Include="Forms\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\chatrooms.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventologyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventologyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventologyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventologyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EventologyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\events.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\incidences.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\inventory_items.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\inventory_rooms.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\media.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\messages.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rooms.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\seats.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tickets.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\users.cs">
+      <DependentUpon>EventologyModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Utils\MessageBoxUtils.cs" />
     <Compile Include="Languages\Resources.es.Designer.cs">
       <DependentUpon>Resources.es.resx</DependentUpon>
@@ -196,6 +245,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Models\EventologyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EventologyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\EventologyModel.edmx.diagram">
+      <DependentUpon>EventologyModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Resources\Fonts\Futura\futur.ttf" />
     <None Include="Resources\Fonts\Futura\Futura Bold font.ttf" />
@@ -249,11 +305,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\background.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\EventologyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EventologyModel.edmx</DependentUpon>
+      <LastGenOutput>EventologyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EventologyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EventologyModel.edmx</DependentUpon>
+      <LastGenOutput>EventologyModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\Fonts\Futura\sharefonts.net.txt" />
     <Content Include="Resources\Fonts\Work Sans\OFL.txt" />
     <Content Include="Resources\Fonts\Work Sans\README.txt" />
