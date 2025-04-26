@@ -166,6 +166,18 @@
     <Compile Include="Models\inventory_rooms.cs">
       <DependentUpon>EventologyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Management\ChatroomsOrm.cs" />
+    <Compile Include="Models\Management\EventsOrm.cs" />
+    <Compile Include="Models\Management\IncidencesOrm.cs" />
+    <Compile Include="Models\Management\Inventory_itemsOrm.cs" />
+    <Compile Include="Models\Management\Inventory_roomsOrm.cs" />
+    <Compile Include="Models\Management\MediaOrm.cs" />
+    <Compile Include="Models\Management\MessagesOrm.cs" />
+    <Compile Include="Models\Management\Orm.cs" />
+    <Compile Include="Models\Management\RoomsOrm.cs" />
+    <Compile Include="Models\Management\SeatsOrm.cs" />
+    <Compile Include="Models\Management\TicketsOrm.cs" />
+    <Compile Include="Models\Management\UsersOrm.cs" />
     <Compile Include="Models\media.cs">
       <DependentUpon>EventologyModel.tt</DependentUpon>
     </Compile>
