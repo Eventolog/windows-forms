@@ -91,7 +91,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Eventology.Properties.Resources.gencat;
+            this.pictureBox1.BackgroundImage = global::Eventology.Properties.Resources.gencat_definitive;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(151, 36);
             this.pictureBox1.Name = "pictureBox1";

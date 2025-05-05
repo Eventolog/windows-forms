@@ -337,6 +337,7 @@
     <Content Include="Resources\Fonts\Futura\sharefonts.net.txt" />
     <Content Include="Resources\Fonts\Work Sans\OFL.txt" />
     <Content Include="Resources\Fonts\Work Sans\README.txt" />
+    <None Include="Resources\Images\gencat_definitive.png" />
     <Content Include="Resources\Images\logo.ico" />
     <EmbeddedResource Include="Resources\Images\gencat_white.png" />
     <EmbeddedResource Include="Resources\Images\gencat.png" />
