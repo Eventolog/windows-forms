@@ -41,10 +41,11 @@
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(164, 264);
+            this.labelUsername.Location = new System.Drawing.Point(164, 258);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(37, 13);
+            this.labelUsername.Size = new System.Drawing.Size(51, 18);
             this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "Usuari";
             // 
@@ -52,16 +53,17 @@
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.BackColor = System.Drawing.Color.Transparent;
+            this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(164, 314);
+            this.labelPassword.Location = new System.Drawing.Point(164, 310);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(66, 13);
+            this.labelPassword.Size = new System.Drawing.Size(92, 18);
             this.labelPassword.TabIndex = 1;
             this.labelPassword.Text = "Contrasenya";
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(167, 280);
+            this.textBoxUser.Location = new System.Drawing.Point(167, 278);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(216, 20);
             this.textBoxUser.TabIndex = 2;
@@ -77,6 +79,7 @@
             // 
             // buttonLogin
             // 
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(167, 386);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(216, 43);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventologyForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.buttonInit = new System.Windows.Forms.Button();
             this.buttonRooms = new System.Windows.Forms.Button();
@@ -140,6 +141,7 @@
             this.Controls.Add(this.buttonRooms);
             this.Controls.Add(this.buttonInit);
             this.Controls.Add(this.mainPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EventologyForm";
             this.Text = "Eventology";
             this.ResumeLayout(false);
