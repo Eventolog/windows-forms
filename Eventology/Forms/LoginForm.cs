@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eventology.Models.Management;
+using System;
 using System.Windows.Forms;
 
 namespace Eventology.Forms
@@ -41,8 +42,9 @@ namespace Eventology.Forms
             string username = textBoxUser.Text;
             string password = textBoxPassword.Text;
 
-            // Validar les credencials
-            if (username == "admin" && password == "admin")
+            bool isValid = UsersOrm.ValidateUserLogin(username, password);
+
+            if (isValid)
             {
                 LoginSuccessful?.Invoke(this, EventArgs.Empty);
             }
