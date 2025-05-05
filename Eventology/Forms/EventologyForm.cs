@@ -15,8 +15,9 @@ namespace Eventology
 
             CustomizeWindow();
             CustomizeButtons();
-            ShowLoginForm();
+
             ToggleButtons(false);
+            ShowLoginForm();
         }
 
         private void buttonInit_Click(object sender, System.EventArgs e)
@@ -57,16 +58,17 @@ namespace Eventology
 
         private void button_Paint(object sender, PaintEventArgs e)
         {
-            Button button = sender as Button;
-            if (button != null)
+            Button btn = sender as Button;
+
+            // Eliminar rectangle de focus visual
+            e.Graphics.Clear(btn.BackColor);
+            TextRenderer.DrawText(e.Graphics, btn.Text, btn.Font, btn.ClientRectangle, btn.ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+            if (btn == selectedButton || btn.ClientRectangle.Contains(btn.PointToClient(MousePosition)))
             {
-                // Dibuixar la línia sota del botó seleccionat o quan el ratolí passi per sobre
-                if (button == selectedButton || button.ClientRectangle.Contains(button.PointToClient(MousePosition)))
+                using (Pen pen = new Pen(Color.Red, 2))
                 {
-                    using (Pen pen = new Pen(Color.Red, 2))
-                    {
-                        e.Graphics.DrawLine(pen, 0, button.Height - 1, button.Width, button.Height - 1);
-                    }
+                    e.Graphics.DrawLine(pen, 0, btn.Height - 1, btn.Width, btn.Height - 1);
                 }
             }
         }

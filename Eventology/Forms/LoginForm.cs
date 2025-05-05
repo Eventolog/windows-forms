@@ -14,6 +14,7 @@ namespace Eventology.Forms
 
             this.textBoxUser.KeyDown += TextBoxUser_KeyDown;
             this.textBoxPassword.KeyDown += TextBoxPassword_KeyDown;
+            this.AcceptButton = this.buttonLogin;
         }
 
         private void TextBoxUser_KeyDown(object sender, KeyEventArgs e)
