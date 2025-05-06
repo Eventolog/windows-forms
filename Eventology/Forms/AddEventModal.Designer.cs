@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEventModal));
             this.labelRoom = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.textBoxRoom = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelOrganizer = new System.Windows.Forms.Label();
             this.labelState = new System.Windows.Forms.Label();
             this.labelEnd = new System.Windows.Forms.Label();
             this.labelInit = new System.Windows.Forms.Label();
-            this.textBoxStartTime = new System.Windows.Forms.TextBox();
-            this.textBoxEndTime = new System.Windows.Forms.TextBox();
-            this.textBoxStatus = new System.Windows.Forms.TextBox();
-            this.textBoxOrganizer = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.dateTimePickerStartTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEndTime = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxOrganizer = new System.Windows.Forms.ComboBox();
+            this.comboBoxRoom = new System.Windows.Forms.ComboBox();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.Location = new System.Drawing.Point(13, 169);
+            this.labelRoom.Location = new System.Drawing.Point(13, 166);
             this.labelRoom.Name = "labelRoom";
             this.labelRoom.Size = new System.Drawing.Size(28, 13);
             this.labelRoom.TabIndex = 18;
@@ -76,24 +79,14 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Enabled = false;
             this.textBoxDescription.Location = new System.Drawing.Point(100, 64);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(343, 79);
             this.textBoxDescription.TabIndex = 15;
             // 
-            // textBoxRoom
-            // 
-            this.textBoxRoom.Enabled = false;
-            this.textBoxRoom.Location = new System.Drawing.Point(100, 166);
-            this.textBoxRoom.Name = "textBoxRoom";
-            this.textBoxRoom.Size = new System.Drawing.Size(185, 20);
-            this.textBoxRoom.TabIndex = 14;
-            // 
             // textBoxName
             // 
-            this.textBoxName.Enabled = false;
             this.textBoxName.Location = new System.Drawing.Point(100, 23);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(185, 20);
@@ -102,7 +95,7 @@
             // labelOrganizer
             // 
             this.labelOrganizer.AutoSize = true;
-            this.labelOrganizer.Location = new System.Drawing.Point(16, 330);
+            this.labelOrganizer.Location = new System.Drawing.Point(13, 330);
             this.labelOrganizer.Name = "labelOrganizer";
             this.labelOrganizer.Size = new System.Drawing.Size(67, 13);
             this.labelOrganizer.TabIndex = 26;
@@ -111,7 +104,7 @@
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Location = new System.Drawing.Point(16, 287);
+            this.labelState.Location = new System.Drawing.Point(13, 287);
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(31, 13);
             this.labelState.TabIndex = 25;
@@ -120,7 +113,7 @@
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
-            this.labelEnd.Location = new System.Drawing.Point(16, 250);
+            this.labelEnd.Location = new System.Drawing.Point(13, 249);
             this.labelEnd.Name = "labelEnd";
             this.labelEnd.Size = new System.Drawing.Size(29, 13);
             this.labelEnd.TabIndex = 24;
@@ -129,43 +122,11 @@
             // labelInit
             // 
             this.labelInit.AutoSize = true;
-            this.labelInit.Location = new System.Drawing.Point(16, 209);
+            this.labelInit.Location = new System.Drawing.Point(13, 209);
             this.labelInit.Name = "labelInit";
             this.labelInit.Size = new System.Drawing.Size(26, 13);
             this.labelInit.TabIndex = 23;
             this.labelInit.Text = "Inici";
-            // 
-            // textBoxStartTime
-            // 
-            this.textBoxStartTime.Enabled = false;
-            this.textBoxStartTime.Location = new System.Drawing.Point(100, 206);
-            this.textBoxStartTime.Name = "textBoxStartTime";
-            this.textBoxStartTime.Size = new System.Drawing.Size(150, 20);
-            this.textBoxStartTime.TabIndex = 22;
-            // 
-            // textBoxEndTime
-            // 
-            this.textBoxEndTime.Enabled = false;
-            this.textBoxEndTime.Location = new System.Drawing.Point(100, 247);
-            this.textBoxEndTime.Name = "textBoxEndTime";
-            this.textBoxEndTime.Size = new System.Drawing.Size(150, 20);
-            this.textBoxEndTime.TabIndex = 21;
-            // 
-            // textBoxStatus
-            // 
-            this.textBoxStatus.Enabled = false;
-            this.textBoxStatus.Location = new System.Drawing.Point(100, 284);
-            this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(100, 20);
-            this.textBoxStatus.TabIndex = 20;
-            // 
-            // textBoxOrganizer
-            // 
-            this.textBoxOrganizer.Enabled = false;
-            this.textBoxOrganizer.Location = new System.Drawing.Point(100, 323);
-            this.textBoxOrganizer.Name = "textBoxOrganizer";
-            this.textBoxOrganizer.Size = new System.Drawing.Size(173, 20);
-            this.textBoxOrganizer.TabIndex = 19;
             // 
             // buttonSave
             // 
@@ -175,6 +136,7 @@
             this.buttonSave.TabIndex = 27;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
@@ -184,31 +146,87 @@
             this.buttonCancel.TabIndex = 28;
             this.buttonCancel.Text = "Cancelar";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // dateTimePickerStartTime
+            // 
+            this.dateTimePickerStartTime.Location = new System.Drawing.Point(100, 203);
+            this.dateTimePickerStartTime.Name = "dateTimePickerStartTime";
+            this.dateTimePickerStartTime.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStartTime.TabIndex = 29;
+            // 
+            // dateTimePickerEndTime
+            // 
+            this.dateTimePickerEndTime.Location = new System.Drawing.Point(100, 243);
+            this.dateTimePickerEndTime.Name = "dateTimePickerEndTime";
+            this.dateTimePickerEndTime.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerEndTime.TabIndex = 30;
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "scheduled",
+            "cancelled",
+            "completed"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(100, 284);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.TabIndex = 32;
+            // 
+            // comboBoxOrganizer
+            // 
+            this.comboBoxOrganizer.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.usersBindingSource, "type", true));
+            this.comboBoxOrganizer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOrganizer.FormattingEnabled = true;
+            this.comboBoxOrganizer.Location = new System.Drawing.Point(100, 327);
+            this.comboBoxOrganizer.Name = "comboBoxOrganizer";
+            this.comboBoxOrganizer.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxOrganizer.TabIndex = 33;
+            // 
+            // comboBoxRoom
+            // 
+            this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoom.FormattingEnabled = true;
+            this.comboBoxRoom.Items.AddRange(new object[] {
+            "scheduled",
+            "cancelled",
+            "completed"});
+            this.comboBoxRoom.Location = new System.Drawing.Point(100, 161);
+            this.comboBoxRoom.Name = "comboBoxRoom";
+            this.comboBoxRoom.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxRoom.TabIndex = 34;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataSource = typeof(Eventology.Models.users);
             // 
             // AddEventModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 420);
+            this.Controls.Add(this.comboBoxRoom);
+            this.Controls.Add(this.comboBoxOrganizer);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.dateTimePickerEndTime);
+            this.Controls.Add(this.dateTimePickerStartTime);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelOrganizer);
             this.Controls.Add(this.labelState);
             this.Controls.Add(this.labelEnd);
             this.Controls.Add(this.labelInit);
-            this.Controls.Add(this.textBoxStartTime);
-            this.Controls.Add(this.textBoxEndTime);
-            this.Controls.Add(this.textBoxStatus);
-            this.Controls.Add(this.textBoxOrganizer);
             this.Controls.Add(this.labelRoom);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.textBoxDescription);
-            this.Controls.Add(this.textBoxRoom);
             this.Controls.Add(this.textBoxName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEventModal";
             this.Text = "Afegir Event";
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,17 +238,18 @@
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.TextBox textBoxRoom;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelOrganizer;
         private System.Windows.Forms.Label labelState;
         private System.Windows.Forms.Label labelEnd;
         private System.Windows.Forms.Label labelInit;
-        private System.Windows.Forms.TextBox textBoxStartTime;
-        private System.Windows.Forms.TextBox textBoxEndTime;
-        private System.Windows.Forms.TextBox textBoxStatus;
-        private System.Windows.Forms.TextBox textBoxOrganizer;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStartTime;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEndTime;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.ComboBox comboBoxOrganizer;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxRoom;
     }
 }

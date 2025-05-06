@@ -292,6 +292,7 @@
       <DependentUpon>EventologyModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Eventology.Models.users.datasource" />
     <None Include="Resources\Fonts\Futura\futur.ttf" />
     <None Include="Resources\Fonts\Futura\Futura Bold font.ttf" />
     <None Include="Resources\Fonts\Futura\Futura Bold Italic font.ttf" />

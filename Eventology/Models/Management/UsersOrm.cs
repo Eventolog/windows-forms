@@ -108,5 +108,30 @@ namespace Eventology.Models.Management
 
             return false;
         }
+
+        public static List<object> SelectOrganizers()
+        {
+            try
+            {
+                return Orm.db.users
+                    .Where(u => u.type == "organizer")
+                    .Select(u => new
+                    {
+                        u.id,
+                        u.name
+                    })
+                    .ToList<object>();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return new List<object>();
+        }
     }
 }
