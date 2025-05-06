@@ -112,6 +112,12 @@
     <Compile Include="Forms\EditSceneryModal.Designer.cs">
       <DependentUpon>EditSceneryModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EventDetailsModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventDetailsModal.Designer.cs">
+      <DependentUpon>EventDetailsModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EventologyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditSceneryModal.resx">
       <DependentUpon>EditSceneryModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventDetailsModal.resx">
+      <DependentUpon>EventDetailsModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventologyForm.resx">
       <DependentUpon>EventologyForm.cs</DependentUpon>

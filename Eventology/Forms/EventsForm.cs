@@ -60,7 +60,17 @@ namespace Eventology.Forms
 
         private void buttonSeeEvent_Click(object sender, EventArgs e)
         {
+            if (dataGridViewEvents.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un esdeveniment per veure'n els detalls.", "Cap selecció", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            int eventId = Convert.ToInt32(dataGridViewEvents.SelectedRows[0].Cells["id"].Value);
+
+            var modal = new EventDetailsModal(eventId);
+            modal.StartPosition = FormStartPosition.CenterScreen;
+            modal.ShowDialog();
         }
 
         private void buttonAddUser_Click(object sender, EventArgs e)
@@ -92,11 +102,6 @@ namespace Eventology.Forms
                         dataGridViewUsers.Columns["id"].Visible = false;
                 }
             }
-        }
-
-        private void buttonSeeUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

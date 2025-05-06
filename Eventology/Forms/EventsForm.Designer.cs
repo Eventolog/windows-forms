@@ -32,7 +32,6 @@
             this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.labelEvents = new System.Windows.Forms.Label();
             this.labelUsers = new System.Windows.Forms.Label();
-            this.buttonSeeUser = new System.Windows.Forms.Button();
             this.buttonAddEvent = new System.Windows.Forms.Button();
             this.buttonDeleteEvent = new System.Windows.Forms.Button();
             this.buttonDeleteUser = new System.Windows.Forms.Button();
@@ -98,16 +97,6 @@
             this.labelUsers.TabIndex = 5;
             this.labelUsers.Text = "Users";
             // 
-            // buttonSeeUser
-            // 
-            this.buttonSeeUser.Location = new System.Drawing.Point(909, 445);
-            this.buttonSeeUser.Name = "buttonSeeUser";
-            this.buttonSeeUser.Size = new System.Drawing.Size(75, 23);
-            this.buttonSeeUser.TabIndex = 8;
-            this.buttonSeeUser.Text = "Més info";
-            this.buttonSeeUser.UseVisualStyleBackColor = true;
-            this.buttonSeeUser.Click += new System.EventHandler(this.buttonSeeUser_Click);
-            // 
             // buttonAddEvent
             // 
             this.buttonAddEvent.Location = new System.Drawing.Point(532, 96);
@@ -169,7 +158,6 @@
             this.Controls.Add(this.buttonAddUser);
             this.Controls.Add(this.buttonDeleteEvent);
             this.Controls.Add(this.buttonAddEvent);
-            this.Controls.Add(this.buttonSeeUser);
             this.Controls.Add(this.labelUsers);
             this.Controls.Add(this.labelEvents);
             this.Controls.Add(this.dataGridViewUsers);
@@ -189,7 +177,6 @@
         private System.Windows.Forms.DataGridView dataGridViewUsers;
         private System.Windows.Forms.Label labelEvents;
         private System.Windows.Forms.Label labelUsers;
-        private System.Windows.Forms.Button buttonSeeUser;
         private System.Windows.Forms.Button buttonAddEvent;
         private System.Windows.Forms.Button buttonDeleteEvent;
         private System.Windows.Forms.Button buttonDeleteUser;
