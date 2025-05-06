@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Eventology.Models.Management
 {
@@ -65,6 +66,26 @@ namespace Eventology.Models.Management
             {
                 Console.WriteLine("Error eliminant esdeveniment: " + ex.Message);
             }
+            return false;
+        }
+
+        public static bool InsertEvent(Models.events newEvent)
+        {
+            try
+            {
+                Orm.db.events.Add(newEvent);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error SQL: " + Orm.ErrorMessage(ex), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error general: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return false;
         }
     }
