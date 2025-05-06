@@ -106,6 +106,7 @@
             this.buttonSeeUser.TabIndex = 8;
             this.buttonSeeUser.Text = "Més info";
             this.buttonSeeUser.UseVisualStyleBackColor = true;
+            this.buttonSeeUser.Click += new System.EventHandler(this.buttonSeeUser_Click);
             // 
             // buttonAddEvent
             // 
@@ -115,6 +116,7 @@
             this.buttonAddEvent.TabIndex = 9;
             this.buttonAddEvent.Text = "+";
             this.buttonAddEvent.UseVisualStyleBackColor = true;
+            this.buttonAddEvent.Click += new System.EventHandler(this.buttonAddEvent_Click);
             // 
             // buttonDeleteEvent
             // 
@@ -124,6 +126,7 @@
             this.buttonDeleteEvent.TabIndex = 10;
             this.buttonDeleteEvent.Text = "-";
             this.buttonDeleteEvent.UseVisualStyleBackColor = true;
+            this.buttonDeleteEvent.Click += new System.EventHandler(this.buttonDeleteEvent_Click);
             // 
             // buttonDeleteUser
             // 
@@ -133,6 +136,7 @@
             this.buttonDeleteUser.TabIndex = 12;
             this.buttonDeleteUser.Text = "-";
             this.buttonDeleteUser.UseVisualStyleBackColor = true;
+            this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
             // buttonAddUser
             // 
@@ -142,6 +146,7 @@
             this.buttonAddUser.TabIndex = 11;
             this.buttonAddUser.Text = "+";
             this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // buttonSeeEvent
             // 
@@ -151,6 +156,7 @@
             this.buttonSeeEvent.TabIndex = 13;
             this.buttonSeeEvent.Text = "Més info";
             this.buttonSeeEvent.UseVisualStyleBackColor = true;
+            this.buttonSeeEvent.Click += new System.EventHandler(this.buttonSeeEvent_Click);
             // 
             // EventsForm
             // 

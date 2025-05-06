@@ -34,5 +34,35 @@ namespace Eventology.Forms
                     dataGridViewUsers.Columns["id"].Visible = false;
             }
         }
+
+        private void buttonAddEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeleteEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSeeEvent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDeleteUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSeeUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

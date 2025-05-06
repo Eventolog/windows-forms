@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Eventology.Forms
 {
-    public partial class EditSceneryForm : Form
+    public partial class EditSceneryModal : Form
     {
         private List<Element> elements = new List<Element>();
         private Element selectedElement;
@@ -23,7 +23,7 @@ namespace Eventology.Forms
         private int seatsAmount = 0;
         private int seatsExistingAmount = 0;
 
-        public EditSceneryForm()
+        public EditSceneryModal()
         {
             InitializeComponent();
             scenery = new Scenery(new Rectangle(0, 0, 400, 50));
