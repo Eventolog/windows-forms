@@ -52,5 +52,61 @@ namespace Eventology.Models.Management
 
             return new List<object>();
         }
+
+        public static bool AddUser(users newUser)
+        {
+            try
+            {
+                Orm.db.users.Add(newUser);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error afegint usuari: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool DeleteUserById(int id)
+        {
+            try
+            {
+                var user = Orm.db.users.Find(id);
+                if (user != null)
+                {
+                    Orm.db.users.Remove(user);
+                    Orm.db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error eliminant usuari: " + ex.Message);
+            }
+            return false;
+        }
+
+        public static bool DeleteUserFromEvent(int userId, int eventId)
+        {
+            try
+            {
+                var ticket = Orm.db.tickets
+                    .FirstOrDefault(t => t.buyer_id == userId && t.event_id == eventId);
+
+                if (ticket != null)
+                {
+                    Orm.db.tickets.Remove(ticket);
+                    Orm.db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error eliminant la relació usuari-esdeveniment: " + ex.Message);
+            }
+
+            return false;
+        }
     }
 }

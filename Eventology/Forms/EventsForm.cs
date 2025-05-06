@@ -37,12 +37,25 @@ namespace Eventology.Forms
 
         private void buttonAddEvent_Click(object sender, EventArgs e)
         {
-
+            var modal = new AddEventModal();
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                LoadEvents();
+            }
         }
 
         private void buttonDeleteEvent_Click(object sender, EventArgs e)
         {
-
+            if (dataGridViewEvents.SelectedRows.Count > 0)
+            {
+                int eventId = Convert.ToInt32(dataGridViewEvents.SelectedRows[0].Cells["id"].Value);
+                var confirm = MessageBox.Show("Segur que vols eliminar aquest esdeveniment?", "Confirmació", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    EventsOrm.DeleteEventById(eventId);
+                    LoadEvents();
+                }
+            }
         }
 
         private void buttonSeeEvent_Click(object sender, EventArgs e)
@@ -52,12 +65,33 @@ namespace Eventology.Forms
 
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
-
+            var modal = new AddUserModal();
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                LoadEvents();
+            }
         }
 
         private void buttonDeleteUser_Click(object sender, EventArgs e)
         {
+            if (dataGridViewEvents.SelectedRows.Count > 0 && dataGridViewUsers.SelectedRows.Count > 0)
+            {
+                int eventId = Convert.ToInt32(dataGridViewEvents.SelectedRows[0].Cells["id"].Value);
+                int userId = Convert.ToInt32(dataGridViewUsers.SelectedRows[0].Cells["id"].Value);
 
+                var confirm = MessageBox.Show("Segur que vols eliminar aquest usuari de l’esdeveniment?", "Confirmació", MessageBoxButtons.YesNo);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    UsersOrm.DeleteUserFromEvent(userId, eventId);
+
+                    // Actualitzar llista d’usuaris de l’esdeveniment
+                    var users = UsersOrm.SelectUsersByEvent(eventId);
+                    dataGridViewUsers.DataSource = users;
+                    if (dataGridViewUsers.Columns.Contains("id"))
+                        dataGridViewUsers.Columns["id"].Visible = false;
+                }
+            }
         }
 
         private void buttonSeeUser_Click(object sender, EventArgs e)

@@ -33,5 +33,39 @@ namespace Eventology.Models.Management
 
             return new List<object>();
         }
+
+        public static bool AddEvent(events newEvent)
+        {
+            try
+            {
+                Orm.db.events.Add(newEvent);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error afegint esdeveniment: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool DeleteEventById(int id)
+        {
+            try
+            {
+                var ev = Orm.db.events.Find(id);
+                if (ev != null)
+                {
+                    Orm.db.events.Remove(ev);
+                    Orm.db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error eliminant esdeveniment: " + ex.Message);
+            }
+            return false;
+        }
     }
 }
