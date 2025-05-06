@@ -1,6 +1,6 @@
 ﻿namespace Eventology.Forms
 {
-    partial class EditSceneryForm
+    partial class EditSceneryModal
     {
         /// <summary>
         /// Required designer variable.
