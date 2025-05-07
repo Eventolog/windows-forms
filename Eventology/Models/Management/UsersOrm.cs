@@ -133,5 +133,18 @@ namespace Eventology.Models.Management
 
             return new List<object>();
         }
+
+        public static users GetUserByCredentials(string username, string password)
+        {
+            try
+            {
+                return Orm.db.users.FirstOrDefault(u => u.name == username && u.password == password);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al buscar usuari: " + ex.Message);
+                return null;
+            }
+        }
     }
 }

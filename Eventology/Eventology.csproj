@@ -214,6 +214,7 @@
     <Compile Include="Models\users.cs">
       <DependentUpon>EventologyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utils\CurrentSession.cs" />
     <Compile Include="Utils\MessageBoxUtils.cs" />
     <Compile Include="Languages\Resources.es.Designer.cs">
       <DependentUpon>Resources.es.resx</DependentUpon>

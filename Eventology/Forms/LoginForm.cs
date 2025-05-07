@@ -1,6 +1,7 @@
-﻿using Eventology.Models.Management;
-using System;
+﻿using System;
+using Eventology.Utils;
 using System.Windows.Forms;
+using Eventology.Models.Management;
 
 namespace Eventology.Forms
 {
@@ -11,10 +12,27 @@ namespace Eventology.Forms
         public LoginForm()
         {
             InitializeComponent();
+            ValidationRole();
 
             this.textBoxUser.KeyDown += TextBoxUser_KeyDown;
             this.textBoxPassword.KeyDown += TextBoxPassword_KeyDown;
             this.AcceptButton = this.buttonLogin;
+        }
+
+        private void ValidationRole()
+        {
+            var user = UsersOrm.GetUserByCredentials(username, password);
+
+            if (user != null)
+            {
+                CurrentSession.LoggedUser = user;
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Credencials incorrectes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void TextBoxUser_KeyDown(object sender, KeyEventArgs e)

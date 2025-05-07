@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eventology.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Eventology
@@ -13,8 +14,14 @@ namespace Eventology
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new EventologyForm());
-            Application.Run(new EventologyForm());
+
+            using (var loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new EventologyForm());
+                }
+            }
         }
     }
 }

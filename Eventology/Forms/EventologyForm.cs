@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Eventology.Forms;
+using Eventology.Utils;
 
 namespace Eventology
 {
@@ -16,8 +17,30 @@ namespace Eventology
             CustomizeWindow();
             CustomizeButtons();
 
+            ApplyRolePermissions();
             ToggleButtons(false);
             ShowLoginForm();
+        }
+
+        private void ApplyRolePermissions()
+        {
+            var user = CurrentSession.LoggedUser;
+
+            if (user == null)
+            {
+                MessageBox.Show("No hi ha cap usuari actiu. Tancant aplicació.");
+                this.Close();
+                return;
+            }
+
+            if (user.type == "organizer")
+            {
+                // Afegir més lògica
+            }
+            else if (user.type == "superadmin")
+            {
+                // Tot activat
+            }
         }
 
         private void buttonInit_Click(object sender, System.EventArgs e)
