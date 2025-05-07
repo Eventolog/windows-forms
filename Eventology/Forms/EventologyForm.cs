@@ -17,7 +17,6 @@ namespace Eventology
             CustomizeWindow();
             CustomizeButtons();
 
-            ApplyRolePermissions();
             ToggleButtons(false);
             ShowLoginForm();
         }
@@ -207,6 +206,8 @@ namespace Eventology
         {
             ToggleButtons(true);
             SwitchForm(new HomeForm());
+
+            ApplyRolePermissions();
 
             this.ActiveControl = null;
         }

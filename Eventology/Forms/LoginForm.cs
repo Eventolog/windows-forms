@@ -12,26 +12,38 @@ namespace Eventology.Forms
         public LoginForm()
         {
             InitializeComponent();
-            ValidationRole();
 
             this.textBoxUser.KeyDown += TextBoxUser_KeyDown;
             this.textBoxPassword.KeyDown += TextBoxPassword_KeyDown;
             this.AcceptButton = this.buttonLogin;
+
         }
 
-        private void ValidationRole()
+        private void ValidateLogin()
         {
+            string username = textBoxUser.Text.Trim();
+            string password = textBoxPassword.Text.Trim();
+
             var user = UsersOrm.GetUserByCredentials(username, password);
 
             if (user != null)
             {
+                if (user.type != "organizer" && user.type != "superadmin")
+                {
+                    MessageBox.Show("No tens permisos per accedir.", "Accés denegat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 CurrentSession.LoggedUser = user;
-                DialogResult = DialogResult.OK;
+
+                Console.WriteLine($"Usuari iniciat: {user.name}, Rol: {user.type}");
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Credencials incorrectes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Credencials incorrectes. Torna-ho a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -54,23 +66,6 @@ namespace Eventology.Forms
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             ValidateLogin();
-        }
-
-        private void ValidateLogin()
-        {
-            string username = textBoxUser.Text;
-            string password = textBoxPassword.Text;
-
-            bool isValid = UsersOrm.ValidateUserLogin(username, password);
-
-            if (isValid)
-            {
-                LoginSuccessful?.Invoke(this, EventArgs.Empty);
-            }
-            else
-            {
-                MessageBox.Show("Credencials incorrectes. Torna-ho a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
     }
 }
