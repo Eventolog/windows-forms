@@ -53,40 +53,6 @@ namespace Eventology.Models.Management
             return new List<object>();
         }
 
-        public static bool AddUser(users newUser)
-        {
-            try
-            {
-                Orm.db.users.Add(newUser);
-                Orm.db.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error afegint usuari: " + ex.Message);
-                return false;
-            }
-        }
-
-        public static bool DeleteUserById(int id)
-        {
-            try
-            {
-                var user = Orm.db.users.Find(id);
-                if (user != null)
-                {
-                    Orm.db.users.Remove(user);
-                    Orm.db.SaveChanges();
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error eliminant usuari: " + ex.Message);
-            }
-            return false;
-        }
-
         public static bool DeleteUserFromEvent(int userId, int eventId)
         {
             try
@@ -107,46 +73,6 @@ namespace Eventology.Models.Management
             }
 
             return false;
-        }
-
-        public static List<object> SelectOrganizers()
-        {
-            try
-            {
-                return Orm.db.users
-                    .Where(u => u.type == "organizer")
-                    .Select(u => new
-                    {
-                        u.id,
-                        u.name
-                    })
-                    .ToList<object>();
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(Orm.ErrorMessage(ex));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error general: " + ex.Message);
-            }
-
-            return new List<object>();
-        }
-
-        public static List<object> SelectAllUsers()
-        {
-            try
-            {
-                return Orm.db.users
-                    .Select(u => new { u.id, u.name })
-                    .ToList<object>();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error carregant usuaris: " + ex.Message);
-            }
-            return new List<object>();
         }
 
         public static bool AddUserToEvent(int userId, int eventId)
@@ -198,6 +124,76 @@ namespace Eventology.Models.Management
             catch (Exception ex)
             {
                 Console.WriteLine("Error carregant usuaris disponibles: " + ex.Message);
+            }
+
+            return new List<object>();
+        }
+
+        public static bool InsertUser(users user)
+        {
+            try
+            {
+                Orm.db.users.Add(user);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return false;
+        }
+
+        public static bool DeleteUserById(int userId)
+        {
+            try
+            {
+                var user = Orm.db.users.Find(userId);
+                if (user != null)
+                {
+                    Orm.db.users.Remove(user);
+                    Orm.db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return false;
+        }
+
+        public static List<object> SelectOrganizers()
+        {
+            try
+            {
+                return Orm.db.users
+                    .Where(u => u.type == "organizer")
+                    .Select(u => new
+                    {
+                        u.id,
+                        u.name,
+                        u.email
+                    })
+                    .ToList<object>();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
             }
 
             return new List<object>();
