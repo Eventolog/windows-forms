@@ -53,40 +53,6 @@ namespace Eventology.Models.Management
             return new List<object>();
         }
 
-        public static bool AddUser(users newUser)
-        {
-            try
-            {
-                Orm.db.users.Add(newUser);
-                Orm.db.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error afegint usuari: " + ex.Message);
-                return false;
-            }
-        }
-
-        public static bool DeleteUserById(int id)
-        {
-            try
-            {
-                var user = Orm.db.users.Find(id);
-                if (user != null)
-                {
-                    Orm.db.users.Remove(user);
-                    Orm.db.SaveChanges();
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error eliminant usuari: " + ex.Message);
-            }
-            return false;
-        }
-
         public static bool DeleteUserFromEvent(int userId, int eventId)
         {
             try
@@ -109,6 +75,104 @@ namespace Eventology.Models.Management
             return false;
         }
 
+        public static bool AddUserToEvent(int userId, int eventId)
+        {
+            try
+            {
+                var ticket = new tickets
+                {
+                    name = "Reserva Automàtica",
+                    reservation = DateTime.Now,
+                    status = "reserved",
+                    buyer_id = userId,
+                    event_id = eventId
+                };
+                Orm.db.tickets.Add(ticket);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error afegint usuari a event: " + ex.Message);
+            }
+            return false;
+        }
+
+        public static List<object> SelectAvailableUsersForEvent(int eventId)
+        {
+            try
+            {
+                // IDs d’usuaris ja assignats a l’event
+                var assignedUserIds = Orm.db.tickets
+                    .Where(t => t.event_id == eventId)
+                    .Select(t => t.buyer_id)
+                    .Distinct()
+                    .ToList();
+
+                // Retornem només els que NO estan assignats
+                var users = Orm.db.users
+                    .Where(u => !assignedUserIds.Contains(u.id))
+                    .Select(u => new
+                    {
+                        u.id,
+                        u.name
+                    })
+                    .ToList<object>();
+
+                return users;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error carregant usuaris disponibles: " + ex.Message);
+            }
+
+            return new List<object>();
+        }
+
+        public static bool InsertUser(users user)
+        {
+            try
+            {
+                Orm.db.users.Add(user);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return false;
+        }
+
+        public static bool DeleteUserById(int userId)
+        {
+            try
+            {
+                var user = Orm.db.users.Find(userId);
+                if (user != null)
+                {
+                    Orm.db.users.Remove(user);
+                    Orm.db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(Orm.ErrorMessage(ex));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+
+            return false;
+        }
+
         public static List<object> SelectOrganizers()
         {
             try
@@ -118,7 +182,8 @@ namespace Eventology.Models.Management
                     .Select(u => new
                     {
                         u.id,
-                        u.name
+                        u.name,
+                        u.email
                     })
                     .ToList<object>();
             }
