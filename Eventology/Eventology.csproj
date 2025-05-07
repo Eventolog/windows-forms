@@ -349,7 +349,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\background.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\EventologyModel.Context.tt">
@@ -365,11 +365,11 @@
     <Content Include="Resources\Fonts\Futura\sharefonts.net.txt" />
     <Content Include="Resources\Fonts\Work Sans\OFL.txt" />
     <Content Include="Resources\Fonts\Work Sans\README.txt" />
-    <Content Include="Resources\Images\lupa.png" />
-    <None Include="Resources\Images\gencat_definitive.png" />
-    <Content Include="Resources\Images\logo.ico" />
-    <EmbeddedResource Include="Resources\Images\gencat_white.png" />
-    <EmbeddedResource Include="Resources\Images\gencat.png" />
+    <Resource Include="Resources\Images\lupa.png" />
+    <Resource Include="Resources\Images\gencat_definitive.png" />
+    <Resource Include="Resources\Images\logo.ico" />
+    <Resource Include="Resources\Images\gencat_white.png" />
+    <Resource Include="Resources\Images\gencat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
