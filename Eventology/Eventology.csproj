@@ -94,58 +94,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AddEventModal.cs">
+    <Compile Include="Forms\Events\AddEventModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddEventModal.Designer.cs">
+    <Compile Include="Forms\Events\AddEventModal.Designer.cs">
       <DependentUpon>AddEventModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddUserModal.cs">
+    <Compile Include="Forms\Events\AddUserModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUserModal.Designer.cs">
+    <Compile Include="Forms\Events\AddUserModal.Designer.cs">
       <DependentUpon>AddUserModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventDetailsModal.cs">
+    <Compile Include="Forms\Events\EventDetailsModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventDetailsModal.Designer.cs">
+    <Compile Include="Forms\Events\EventDetailsModal.Designer.cs">
       <DependentUpon>EventDetailsModal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventologyForm.cs">
+    <Compile Include="Forms\Main\EventologyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventologyForm.Designer.cs">
+    <Compile Include="Forms\Main\EventologyForm.Designer.cs">
       <DependentUpon>EventologyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EventsForm.cs">
+    <Compile Include="Forms\Events\EventsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EventsForm.Designer.cs">
+    <Compile Include="Forms\Events\EventsForm.Designer.cs">
       <DependentUpon>EventsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HomeForm.cs">
+    <Compile Include="Forms\Main\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HomeForm.Designer.cs">
+    <Compile Include="Forms\Main\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Forms\Main\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
+    <Compile Include="Forms\Main\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RoomsForm.cs">
+    <Compile Include="Forms\Rooms\RoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RoomsForm.Designer.cs">
+    <Compile Include="Forms\Rooms\RoomsForm.Designer.cs">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UsersForm.cs">
+    <Compile Include="Forms\Users\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UsersForm.Designer.cs">
+    <Compile Include="Forms\Users\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\chatrooms.cs">
@@ -227,31 +227,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\AddEventModal.resx">
+    <EmbeddedResource Include="Forms\Events\AddEventModal.resx">
       <DependentUpon>AddEventModal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddUserModal.resx">
+    <EmbeddedResource Include="Forms\Events\AddUserModal.resx">
       <DependentUpon>AddUserModal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventDetailsModal.resx">
+    <EmbeddedResource Include="Forms\Events\EventDetailsModal.resx">
       <DependentUpon>EventDetailsModal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventologyForm.resx">
+    <EmbeddedResource Include="Forms\Main\EventologyForm.resx">
       <DependentUpon>EventologyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EventsForm.resx">
+    <EmbeddedResource Include="Forms\Events\EventsForm.resx">
       <DependentUpon>EventsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomeForm.resx">
+    <EmbeddedResource Include="Forms\Main\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
+    <EmbeddedResource Include="Forms\Main\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RoomsForm.resx">
+    <EmbeddedResource Include="Forms\Rooms\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UsersForm.resx">
+    <EmbeddedResource Include="Forms\Users\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Resources.es.resx">
