@@ -34,11 +34,22 @@ namespace Eventology
 
             if (user.type == "organizer")
             {
-                // Afegir més lògica
+                // Només habilita Inici, Sales i Sortir
+                buttonInit.Enabled = true;
+                buttonRooms.Enabled = true;
+                buttonExit.Enabled = true;
+
+                buttonEvents.Enabled = false;
+                buttonUsers.Enabled = false;
             }
             else if (user.type == "superadmin")
             {
-                // Tot activat
+                // Habilita-ho tot
+                buttonInit.Enabled = true;
+                buttonRooms.Enabled = true;
+                buttonExit.Enabled = true;
+                buttonEvents.Enabled = true;
+                buttonUsers.Enabled = true;
             }
         }
 
@@ -205,9 +216,9 @@ namespace Eventology
         private void OnLoginSuccessful(object sender, EventArgs e)
         {
             ToggleButtons(true);
-            SwitchForm(new HomeForm());
-
             ApplyRolePermissions();
+
+            SwitchForm(new HomeForm());
 
             this.ActiveControl = null;
         }

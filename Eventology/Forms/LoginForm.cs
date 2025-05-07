@@ -38,6 +38,8 @@ namespace Eventology.Forms
 
                 Console.WriteLine($"Usuari iniciat: {user.name}, Rol: {user.type}");
 
+                LoginSuccessful?.Invoke(this, EventArgs.Empty);
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
