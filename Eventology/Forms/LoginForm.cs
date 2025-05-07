@@ -56,13 +56,15 @@ namespace Eventology.Forms
         }
 
         /// <summary>
-        /// Testing click to automatically login
+        /// (Only enable for development environment) Login with root/root credentials
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            textBoxUser.Text = "root";
+            textBoxPassword.Text = "root";
+            this.ValidateLogin();
         }
     }
 }

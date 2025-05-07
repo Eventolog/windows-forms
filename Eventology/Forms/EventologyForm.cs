@@ -33,7 +33,7 @@ namespace Eventology
 
         private void buttonRooms_Click(object sender, System.EventArgs e)
         {
-            SwitchForm(new RoomsForm());
+            SwitchForm(new RoomDistributionEditorForm());
         }
 
         private void buttonUsers_Click(object sender, System.EventArgs e)

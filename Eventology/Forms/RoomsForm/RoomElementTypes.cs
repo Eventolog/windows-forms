@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Eventology.Forms.RoomsForm
+﻿namespace Eventology.Forms.RoomsForm
 {
     /// <summary>
     /// Provides constant string values representing different types of elements 

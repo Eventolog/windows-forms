@@ -1,6 +1,6 @@
 ﻿namespace Eventology.Forms.RoomsForm
 {
-    partial class RoomsForm
+    partial class RoomDistributionEditorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -226,7 +226,7 @@
             this.button1.Text = "Guardar Distribucio";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // RoomsForm
+            // RoomDistributionEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +248,7 @@
             this.Controls.Add(this.editSeatGroupbox);
             this.Controls.Add(this.groupBoxAmountSeats);
             this.Controls.Add(this.groupBoxActions);
-            this.Name = "RoomsForm";
+            this.Name = "RoomDistributionEditorForm";
             this.Text = "Rooms";
             ((System.ComponentModel.ISupportInitialize)(this.inputPriceEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).EndInit();

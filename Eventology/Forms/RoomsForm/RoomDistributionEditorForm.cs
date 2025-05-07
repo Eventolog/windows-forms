@@ -7,23 +7,60 @@ using System.Windows.Forms;
 
 namespace Eventology.Forms.RoomsForm
 {
-    public partial class RoomsForm : Form
+    /// <summary>
+    /// Form used for edit a room distribution
+    /// </summary>
+    public partial class RoomDistributionEditorForm : Form
     {
+        /// <summary>
+        /// List of created elements
+        /// </summary>
         private List<Element> elements = new List<Element>();
+
+        /// <summary>
+        /// Stores the last selectedElement
+        /// </summary>
         private Element selectedElement;
+
+        /// <summary>
+        /// Stores the last seat that was selected
+        /// </summary>
         private Seat lastSelectedSeat = null;
+
+        /// <summary>
+        /// Stores the unique scenery object
+        /// </summary>
         private Scenery scenery = null;
+
+        /// <summary>
+        /// Stores the offset between the mouse position and the top-left corner of the selected element.
+        /// Used to maintain consistent positioning while dragging elements within the editor
+        /// </summary>
         private Point offset;
 
-        // New alignment variables for Left, Top, Right, Bottom
+        /// <summary>
+        /// Alignment variables for Left, Top, Right, Bottom
+        /// </summary>
         private int? alignmentLineLeft = null;
         private int? alignmentLineTop = null;
         private int? alignmentLineRight = null;
         private int? alignmentLineBottom = null;
+
+
+        /// <summary>
+        /// Total created seats counter
+        /// </summary>
         private int seatsAmount = 0;
+
+        /// <summary>
+        /// Total existing seats counter
+        /// </summary>
         private int seatsExistingAmount = 0;
 
-        public RoomsForm()
+        /// <summary>
+        /// Initialize a room distribution
+        /// </summary>
+        public RoomDistributionEditorForm()
         {
             InitializeComponent();
             scenery = new Scenery(new Rectangle(0, 0, 400, 50));
@@ -38,6 +75,12 @@ namespace Eventology.Forms.RoomsForm
             Render();
         }
 
+        /// <summary>
+        /// Handles the MouseDown event on the room picture box.
+        /// Determines if a seat is being selected for movement and sets the offset for dragging
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">Mouse event arguments containing the position and button info.</param>
         private void Room_MouseDown(object sender, MouseEventArgs e)
         {
             foreach (var elem in elements)
@@ -58,6 +101,13 @@ namespace Eventology.Forms.RoomsForm
             }
         }
 
+        /// <summary>
+        /// Handles the MouseMove event on the room picture box
+        /// Updates the position of the selected element (seat) while aligning with nearby elements
+        /// Triggers re-rendering of the layout with alignment guidelines if applicable
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">Mouse event arguments containing the current mouse position.</param>
         private void Room_MouseMove(object sender, MouseEventArgs e)
         {
             if (selectedElement != null && e.Button == MouseButtons.Left)
@@ -130,7 +180,12 @@ namespace Eventology.Forms.RoomsForm
             }
         }
 
-
+        /// <summary>
+        /// Handles the MouseUp event on the room picture box
+        /// Finalizes the movement of the selected element and clears alignment guidelines
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">Mouse event arguments containing the release position.</param>
         private void Room_MouseUp(object sender, MouseEventArgs e)
         {
             if (selectedElement != null)
@@ -145,6 +200,10 @@ namespace Eventology.Forms.RoomsForm
             }
         }
 
+        /// <summary>
+        /// Renders the room layout by drawing all elements and alignment guides on a bitmap canvas.
+        /// The bitmap is then displayed in the PictureBox control.
+        /// </summary>
         private void Render()
         {
             Bitmap bmp = new Bitmap(roomPictureBox.Width, roomPictureBox.Height);
@@ -223,6 +282,10 @@ namespace Eventology.Forms.RoomsForm
             GenerateJSON();
         }
 
+        /// <summary>
+        /// Generates a JSON representation of the current room layout,
+        /// including all seats and the scenery. The result is output to the console and a text box
+        /// </summary>
         private void GenerateJSON()
         {
             // Filter elements to get only the seats (butacas)
@@ -253,6 +316,12 @@ namespace Eventology.Forms.RoomsForm
             textBox1.Text = json;
         }
 
+        /// <summary>
+        /// Handles the Add Seat button click event
+        /// Creates a new seat with the specified price and adds it to the room layout
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         private void addSeat_Click(object sender, EventArgs e)
         {
             seatsAmount += 1;
@@ -265,6 +334,12 @@ namespace Eventology.Forms.RoomsForm
             Render();
         }
 
+        /// <summary>
+        /// Handles the Delete Seat button click event
+        /// Prompts user for confirmation before removing the last selected seat from the layout
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         private void deleteSeat_Click(object sender, EventArgs e)
         {
             if (lastSelectedSeat == null)
@@ -287,6 +362,11 @@ namespace Eventology.Forms.RoomsForm
 
         }
 
+        /// <summary>
+        /// Removes a seat from the layout by its unique ID
+        /// Updates internal state and resets relevant UI fields
+        /// </summary>
+        /// <param name="seatId">The unique identifier of the seat to remove.</param>
         private void RemoveSeatById(int seatId)
         {
             // Find the seat element with the given ID
@@ -306,6 +386,13 @@ namespace Eventology.Forms.RoomsForm
             }
         }
 
+
+        /// <summary>
+        /// Handles the Edit Seat button click event
+        /// Updates the price of the currently selected seat after validation
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         private void editSeat_Click(object sender, EventArgs e)
         {
             if (lastSelectedSeat == null)
@@ -326,7 +413,6 @@ namespace Eventology.Forms.RoomsForm
 
             Console.WriteLine($"Seat ID {lastSelectedSeat.Id} updated with new price: {newPrice}");
 
-            // Re-render to reflect updated seat
             Render();
         }
 
