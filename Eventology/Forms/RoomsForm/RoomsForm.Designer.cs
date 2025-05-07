@@ -84,7 +84,7 @@
             this.btnEditar.TabIndex = 28;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.s);
+            this.btnEditar.Click += new System.EventHandler(this.editSeat_Click);
             // 
             // qtySeat
             // 
@@ -128,9 +128,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(595, 383);
+            this.textBox1.Location = new System.Drawing.Point(766, 99);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(146, 362);
             this.textBox1.TabIndex = 23;
             // 
             // numericPrice
@@ -171,7 +172,7 @@
             this.btnAddSeat.TabIndex = 19;
             this.btnAddSeat.Text = "Afegir butaca";
             this.btnAddSeat.UseVisualStyleBackColor = false;
-            this.btnAddSeat.Click += new System.EventHandler(this.btnAddSeat_Click);
+            this.btnAddSeat.Click += new System.EventHandler(this.addSeat_Click);
             // 
             // editSeatGroupbox
             // 
@@ -218,7 +219,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(595, 427);
+            this.button1.Location = new System.Drawing.Point(595, 408);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 52);
             this.button1.TabIndex = 34;

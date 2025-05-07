@@ -253,7 +253,7 @@ namespace Eventology.Forms.RoomsForm
             textBox1.Text = json;
         }
 
-        private void btnAddSeat_Click(object sender, EventArgs e)
+        private void addSeat_Click(object sender, EventArgs e)
         {
             seatsAmount += 1;
             seatsExistingAmount += 1;
@@ -308,13 +308,28 @@ namespace Eventology.Forms.RoomsForm
 
         private void editSeat_Click(object sender, EventArgs e)
         {
+            if (lastSelectedSeat == null)
+            {
+                MessageBoxUtility.ShowError("No has seleccionat cap butaca per editar.");
+                return;
+            }
 
+            decimal newPrice = inputPriceEdit.Value;
+
+            if (newPrice <= 0)
+            {
+                MessageBoxUtility.ShowError("El preu ha de ser major que 0.");
+                return;
+            }
+
+            lastSelectedSeat.Price = newPrice;
+
+            Console.WriteLine($"Seat ID {lastSelectedSeat.Id} updated with new price: {newPrice}");
+
+            // Re-render to reflect updated seat
+            Render();
         }
 
-        private void s(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
