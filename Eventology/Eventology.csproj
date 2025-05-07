@@ -136,22 +136,22 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RoomsForm\Element.cs" />
-    <Compile Include="Forms\RoomsForm\RoomElementTypes.cs" />
-    <Compile Include="Forms\RoomsForm\RoomDistributionEditorForm.cs">
+    <Compile Include="Forms\Rooms\Element.cs" />
+    <Compile Include="Forms\Rooms\RoomElementTypes.cs" />
+    <Compile Include="Forms\Rooms\RoomDistributionEditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RoomsForm\RoomDistributionEditorForm.Designer.cs">
+    <Compile Include="Forms\Rooms\RoomDistributionEditorForm.Designer.cs">
       <DependentUpon>RoomDistributionEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RoomsForm\RoomsForm.cs">
+    <Compile Include="Forms\Rooms\RoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RoomsForm\RoomsForm.Designer.cs">
+    <Compile Include="Forms\Rooms\RoomsForm.Designer.cs">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RoomsForm\Scenery.cs" />
-    <Compile Include="Forms\RoomsForm\Seat.cs" />
+    <Compile Include="Forms\Rooms\Scenery.cs" />
+    <Compile Include="Forms\Rooms\Seat.cs" />
     <Compile Include="Forms\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,10 +257,10 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RoomsForm\RoomDistributionEditorForm.resx">
+    <EmbeddedResource Include="Forms\Rooms\RoomDistributionEditorForm.resx">
       <DependentUpon>RoomDistributionEditorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RoomsForm\RoomsForm.resx">
+    <EmbeddedResource Include="Forms\Rooms\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UsersForm.resx">

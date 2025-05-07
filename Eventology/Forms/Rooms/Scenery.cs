@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 
 
-namespace Eventology.Forms.RoomsForm
+namespace Eventology.Forms.Rooms
 {
     /// <summary>
     /// Represents a scenery element within a room layout, 

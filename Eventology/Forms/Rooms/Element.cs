@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 
 
-namespace Eventology.Forms.RoomsForm
+namespace Eventology.Forms.Rooms
 {
     /// <summary>
     /// Represents an abstract square element used in the room layout distribution.

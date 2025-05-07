@@ -1,4 +1,4 @@
-﻿namespace Eventology.Forms.RoomsForm
+﻿namespace Eventology.Forms.Rooms
 {
     /// <summary>
     /// Provides constant string values representing different types of elements 

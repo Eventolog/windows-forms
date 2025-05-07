@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Eventology.Forms.RoomsForm
+namespace Eventology.Forms.Rooms
 {
     /// <summary>
     /// Form used for edit a room distribution

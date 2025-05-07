@@ -1,4 +1,4 @@
-﻿namespace Eventology.Forms.RoomsForm
+﻿namespace Eventology.Forms.Rooms
 {
     partial class RoomsForm
     {
@@ -86,7 +86,7 @@
             this.Delete.Text = "Eliminar";
             this.Delete.UseVisualStyleBackColor = true;
             // 
-            // RoomsForm
+            // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,8 +97,8 @@
             this.Controls.Add(this.btnAddRoom);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelRooms);
-            this.Name = "RoomsForm";
-            this.Text = "RoomsForm";
+            this.Name = "Rooms";
+            this.Text = "Rooms";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

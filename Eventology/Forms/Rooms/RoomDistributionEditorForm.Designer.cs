@@ -1,4 +1,4 @@
-﻿namespace Eventology.Forms.RoomsForm
+﻿namespace Eventology.Forms.Rooms
 {
     partial class RoomDistributionEditorForm
     {
