@@ -1,6 +1,6 @@
 ﻿namespace Eventology.Forms.Rooms
 {
-    partial class RoomDistributionEditorForm
+    partial class RoomDistributionEditorModal
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             this.lblEventName.BackColor = System.Drawing.Color.Transparent;
             this.lblEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEventName.ForeColor = System.Drawing.Color.White;
-            this.lblEventName.Location = new System.Drawing.Point(185, 39);
+            this.lblEventName.Location = new System.Drawing.Point(8, 40);
             this.lblEventName.Name = "lblEventName";
             this.lblEventName.Size = new System.Drawing.Size(276, 36);
             this.lblEventName.TabIndex = 30;
@@ -69,7 +69,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(185, 16);
+            this.label4.Location = new System.Drawing.Point(8, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 20);
             this.label4.TabIndex = 29;
@@ -78,7 +78,7 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(605, 307);
+            this.btnEditar.Location = new System.Drawing.Point(428, 308);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(124, 33);
             this.btnEditar.TabIndex = 28;
@@ -91,7 +91,7 @@
             this.qtySeat.AutoSize = true;
             this.qtySeat.BackColor = System.Drawing.Color.Transparent;
             this.qtySeat.ForeColor = System.Drawing.Color.White;
-            this.qtySeat.Location = new System.Drawing.Point(708, 114);
+            this.qtySeat.Location = new System.Drawing.Point(531, 115);
             this.qtySeat.Name = "qtySeat";
             this.qtySeat.Size = new System.Drawing.Size(13, 13);
             this.qtySeat.TabIndex = 27;
@@ -102,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(603, 114);
+            this.label3.Location = new System.Drawing.Point(426, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 26;
@@ -110,7 +110,7 @@
             // 
             // inputPriceEdit
             // 
-            this.inputPriceEdit.Location = new System.Drawing.Point(602, 237);
+            this.inputPriceEdit.Location = new System.Drawing.Point(425, 238);
             this.inputPriceEdit.Name = "inputPriceEdit";
             this.inputPriceEdit.Size = new System.Drawing.Size(127, 20);
             this.inputPriceEdit.TabIndex = 25;
@@ -118,7 +118,7 @@
             // deleteSeat
             // 
             this.deleteSeat.BackColor = System.Drawing.Color.White;
-            this.deleteSeat.Location = new System.Drawing.Point(195, 114);
+            this.deleteSeat.Location = new System.Drawing.Point(18, 115);
             this.deleteSeat.Name = "deleteSeat";
             this.deleteSeat.Size = new System.Drawing.Size(132, 41);
             this.deleteSeat.TabIndex = 24;
@@ -128,7 +128,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(766, 99);
+            this.textBox1.Location = new System.Drawing.Point(589, 100);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 362);
@@ -136,7 +136,7 @@
             // 
             // numericPrice
             // 
-            this.numericPrice.Location = new System.Drawing.Point(463, 135);
+            this.numericPrice.Location = new System.Drawing.Point(286, 136);
             this.numericPrice.Name = "numericPrice";
             this.numericPrice.Size = new System.Drawing.Size(120, 20);
             this.numericPrice.TabIndex = 22;
@@ -147,7 +147,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(462, 114);
+            this.label1.Location = new System.Drawing.Point(285, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 15);
             this.label1.TabIndex = 21;
@@ -157,7 +157,7 @@
             // 
             this.roomPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.roomPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.roomPictureBox.Location = new System.Drawing.Point(189, 182);
+            this.roomPictureBox.Location = new System.Drawing.Point(12, 183);
             this.roomPictureBox.Name = "roomPictureBox";
             this.roomPictureBox.Size = new System.Drawing.Size(400, 279);
             this.roomPictureBox.TabIndex = 20;
@@ -166,7 +166,7 @@
             // btnAddSeat
             // 
             this.btnAddSeat.BackColor = System.Drawing.Color.White;
-            this.btnAddSeat.Location = new System.Drawing.Point(337, 115);
+            this.btnAddSeat.Location = new System.Drawing.Point(160, 116);
             this.btnAddSeat.Name = "btnAddSeat";
             this.btnAddSeat.Size = new System.Drawing.Size(115, 41);
             this.btnAddSeat.TabIndex = 19;
@@ -179,7 +179,7 @@
             this.editSeatGroupbox.BackColor = System.Drawing.Color.Transparent;
             this.editSeatGroupbox.Controls.Add(this.label2);
             this.editSeatGroupbox.ForeColor = System.Drawing.Color.White;
-            this.editSeatGroupbox.Location = new System.Drawing.Point(595, 182);
+            this.editSeatGroupbox.Location = new System.Drawing.Point(418, 183);
             this.editSeatGroupbox.Name = "editSeatGroupbox";
             this.editSeatGroupbox.Size = new System.Drawing.Size(146, 170);
             this.editSeatGroupbox.TabIndex = 31;
@@ -200,7 +200,7 @@
             // groupBoxAmountSeats
             // 
             this.groupBoxAmountSeats.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxAmountSeats.Location = new System.Drawing.Point(595, 99);
+            this.groupBoxAmountSeats.Location = new System.Drawing.Point(418, 100);
             this.groupBoxAmountSeats.Name = "groupBoxAmountSeats";
             this.groupBoxAmountSeats.Size = new System.Drawing.Size(146, 68);
             this.groupBoxAmountSeats.TabIndex = 32;
@@ -210,7 +210,7 @@
             // groupBoxActions
             // 
             this.groupBoxActions.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxActions.Location = new System.Drawing.Point(189, 99);
+            this.groupBoxActions.Location = new System.Drawing.Point(12, 100);
             this.groupBoxActions.Name = "groupBoxActions";
             this.groupBoxActions.Size = new System.Drawing.Size(400, 68);
             this.groupBoxActions.TabIndex = 33;
@@ -219,19 +219,20 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(595, 408);
+            this.button1.Location = new System.Drawing.Point(418, 409);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 52);
             this.button1.TabIndex = 34;
             this.button1.Text = "Guardar Distribucio";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // RoomDistributionEditorForm
+            // RoomDistributionEditorModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1065, 505);
+            this.ClientSize = new System.Drawing.Size(747, 477);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEventName);
             this.Controls.Add(this.label4);
@@ -248,7 +249,7 @@
             this.Controls.Add(this.editSeatGroupbox);
             this.Controls.Add(this.groupBoxAmountSeats);
             this.Controls.Add(this.groupBoxActions);
-            this.Name = "RoomDistributionEditorForm";
+            this.Name = "RoomDistributionEditorModal";
             this.Text = "Rooms";
             ((System.ComponentModel.ISupportInitialize)(this.inputPriceEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).EndInit();

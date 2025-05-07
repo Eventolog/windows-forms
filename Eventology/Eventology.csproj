@@ -138,11 +138,11 @@
     </Compile>
     <Compile Include="Forms\Rooms\Element.cs" />
     <Compile Include="Forms\Rooms\RoomElementTypes.cs" />
-    <Compile Include="Forms\Rooms\RoomDistributionEditorForm.cs">
+    <Compile Include="Forms\Rooms\RoomDistributionEditorModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Rooms\RoomDistributionEditorForm.Designer.cs">
-      <DependentUpon>RoomDistributionEditorForm.cs</DependentUpon>
+    <Compile Include="Forms\Rooms\RoomDistributionEditorModal.Designer.cs">
+      <DependentUpon>RoomDistributionEditorModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Rooms\RoomsForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +152,12 @@
     </Compile>
     <Compile Include="Forms\Rooms\Scenery.cs" />
     <Compile Include="Forms\Rooms\Seat.cs" />
+    <Compile Include="Forms\Rooms\UpsertRoomModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rooms\UpsertRoomModal.Designer.cs">
+      <DependentUpon>UpsertRoomModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +263,14 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Rooms\RoomDistributionEditorForm.resx">
-      <DependentUpon>RoomDistributionEditorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Rooms\RoomDistributionEditorModal.resx">
+      <DependentUpon>RoomDistributionEditorModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Rooms\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rooms\UpsertRoomModal.resx">
+      <DependentUpon>UpsertRoomModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>

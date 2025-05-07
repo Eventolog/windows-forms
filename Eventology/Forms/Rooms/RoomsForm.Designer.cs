@@ -67,6 +67,7 @@
             this.btnAddRoom.TabIndex = 7;
             this.btnAddRoom.Text = "Afegir";
             this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // btnEditRoom
             // 
@@ -86,7 +87,7 @@
             this.Delete.Text = "Eliminar";
             this.Delete.UseVisualStyleBackColor = true;
             // 
-            // Rooms
+            // RoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +98,7 @@
             this.Controls.Add(this.btnAddRoom);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelRooms);
-            this.Name = "Rooms";
+            this.Name = "RoomsForm";
             this.Text = "Rooms";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
