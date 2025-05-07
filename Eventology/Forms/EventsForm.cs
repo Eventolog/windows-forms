@@ -75,10 +75,23 @@ namespace Eventology.Forms
 
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
-            var modal = new AddUserModal();
+            int eventId = Convert.ToInt32(dataGridViewEvents.SelectedRows[0].Cells["id"].Value);
+
+            // Abans de crear el modal, comprova si hi ha usuaris disponibles
+            var availableUsers = UsersOrm.SelectAvailableUsersForEvent(eventId);
+            if (availableUsers.Count == 0)
+            {
+                MessageBox.Show("Tots els usuaris ja estan assignats a aquest esdeveniment.", "Informació", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var modal = new AddUserModal(eventId);
             if (modal.ShowDialog() == DialogResult.OK)
             {
-                LoadEvents();
+                var users = UsersOrm.SelectUsersByEvent(eventId);
+                dataGridViewUsers.DataSource = users;
+                if (dataGridViewUsers.Columns.Contains("id"))
+                    dataGridViewUsers.Columns["id"].Visible = false;
             }
         }
 
@@ -95,7 +108,6 @@ namespace Eventology.Forms
                 {
                     UsersOrm.DeleteUserFromEvent(userId, eventId);
 
-                    // Actualitzar llista d’usuaris de l’esdeveniment
                     var users = UsersOrm.SelectUsersByEvent(eventId);
                     dataGridViewUsers.DataSource = users;
                     if (dataGridViewUsers.Columns.Contains("id"))

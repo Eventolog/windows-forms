@@ -133,5 +133,74 @@ namespace Eventology.Models.Management
 
             return new List<object>();
         }
+
+        public static List<object> SelectAllUsers()
+        {
+            try
+            {
+                return Orm.db.users
+                    .Select(u => new { u.id, u.name })
+                    .ToList<object>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error carregant usuaris: " + ex.Message);
+            }
+            return new List<object>();
+        }
+
+        public static bool AddUserToEvent(int userId, int eventId)
+        {
+            try
+            {
+                var ticket = new tickets
+                {
+                    name = "Reserva Automàtica",
+                    reservation = DateTime.Now,
+                    status = "reserved",
+                    buyer_id = userId,
+                    event_id = eventId
+                };
+                Orm.db.tickets.Add(ticket);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error afegint usuari a event: " + ex.Message);
+            }
+            return false;
+        }
+
+        public static List<object> SelectAvailableUsersForEvent(int eventId)
+        {
+            try
+            {
+                // IDs d’usuaris ja assignats a l’event
+                var assignedUserIds = Orm.db.tickets
+                    .Where(t => t.event_id == eventId)
+                    .Select(t => t.buyer_id)
+                    .Distinct()
+                    .ToList();
+
+                // Retornem només els que NO estan assignats
+                var users = Orm.db.users
+                    .Where(u => !assignedUserIds.Contains(u.id))
+                    .Select(u => new
+                    {
+                        u.id,
+                        u.name
+                    })
+                    .ToList<object>();
+
+                return users;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error carregant usuaris disponibles: " + ex.Message);
+            }
+
+            return new List<object>();
+        }
     }
 }
