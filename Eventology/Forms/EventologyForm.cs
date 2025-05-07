@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Eventology.Forms;
+using Eventology.Forms.RoomsForm;
 
 namespace Eventology
 {

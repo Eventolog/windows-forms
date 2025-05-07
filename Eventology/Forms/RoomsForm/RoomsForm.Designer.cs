@@ -1,4 +1,4 @@
-﻿namespace Eventology.Forms
+﻿namespace Eventology.Forms.RoomsForm
 {
     partial class RoomsForm
     {
@@ -84,6 +84,7 @@
             this.btnEditar.TabIndex = 28;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.s);
             // 
             // qtySeat
             // 
@@ -123,6 +124,7 @@
             this.deleteSeat.TabIndex = 24;
             this.deleteSeat.Text = "Eliminar butaca";
             this.deleteSeat.UseVisualStyleBackColor = false;
+            this.deleteSeat.Click += new System.EventHandler(this.deleteSeat_Click);
             // 
             // textBox1
             // 
@@ -169,6 +171,7 @@
             this.btnAddSeat.TabIndex = 19;
             this.btnAddSeat.Text = "Afegir butaca";
             this.btnAddSeat.UseVisualStyleBackColor = false;
+            this.btnAddSeat.Click += new System.EventHandler(this.btnAddSeat_Click);
             // 
             // editSeatGroupbox
             // 

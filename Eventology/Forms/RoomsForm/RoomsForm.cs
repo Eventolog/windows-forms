@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Eventology.Forms
+namespace Eventology.Forms.RoomsForm
 {
     public partial class RoomsForm : Form
     {
@@ -160,7 +160,7 @@ namespace Eventology.Forms
                     Font overlayFont = new Font("Arial", 10, FontStyle.Bold);
                     Brush textBrush = Brushes.White;
 
-                    if (elem.Type == ElementTypes.Seat)
+                    if (elem.Type == RoomElementTypes.Seat)
                     {
                         var seat = (Seat)elem;
                         if (lastSelectedSeat != null && seat.Id == lastSelectedSeat.Id)
@@ -175,7 +175,7 @@ namespace Eventology.Forms
                         fillColor = Color.Red;
                         overlayText = $"${seat.Price:F2}";  // Show seat price
                     }
-                    else if (elem.Type == ElementTypes.Scenery)
+                    else if (elem.Type == RoomElementTypes.Scenery)
                     {
                         fillColor = Color.DarkBlue;
                         overlayText = "Escenari";
@@ -227,7 +227,7 @@ namespace Eventology.Forms
         {
             // Filter elements to get only the seats (butacas)
             var seatElements = elements
-                .Where(e => e.Type == ElementTypes.Seat) // Filter by type 'Seat'
+                .Where(e => e.Type == RoomElementTypes.Seat) // Filter by type 'Seat'
                 .Cast<Seat>() // Cast the filtered elements to Seat
                 .Select(seat => new
                 {
@@ -238,7 +238,7 @@ namespace Eventology.Forms
 
             // Filter elements to get only the scenery (Scenery)
             var sceneryElements = elements
-                .Where(e => e.Type == ElementTypes.Scenery) // Filter by type 'Scenery'
+                .Where(e => e.Type == RoomElementTypes.Scenery) // Filter by type 'Scenery'
                 .ToArray(); // Convert the result to an array (no need to cast to Scenery since it's already of that type)
 
             // Create the JSON object with the filtered and cleaned data
@@ -308,54 +308,13 @@ namespace Eventology.Forms
 
         private void editSeat_Click(object sender, EventArgs e)
         {
-            if (lastSelectedSeat != null)
-            {
-                decimal price = inputPriceEdit.Value;
-                lastSelectedSeat.Price = price;
-                Render();
-            }
-            else
-            {
-                MessageBoxUtility.ShowError("No has seleccionat cap butaca per editar");
-            }
+
         }
-    }
 
-    public static class ElementTypes
-    {
-        public const string Scenery = "Scenery";
-        public const string Seat = "Seat";
-    }
-
-    public class Seat : Element
-    {
-        public decimal Price { get; set; }
-        public int Id { get; set; }
-        public Seat(Rectangle bounds, decimal price, int id)
-            : base(bounds, ElementTypes.Seat)
+        private void s(object sender, EventArgs e)
         {
-            Price = price;
-            Id = id;
+
         }
     }
 
-    public class Scenery : Element
-    {
-        public Scenery(Rectangle bounds)
-            : base(bounds, ElementTypes.Scenery)
-        {
-        }
-    }
-
-    public class Element
-    {
-        public string Type { get; set; }
-        public Rectangle Bounds { get; set; }
-
-        public Element(Rectangle bounds, string type)
-        {
-            Bounds = bounds;
-            Type = type;
-        }
-    }
 }
