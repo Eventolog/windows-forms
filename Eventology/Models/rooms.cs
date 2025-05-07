@@ -28,6 +28,7 @@ namespace Eventology.Models
         public string description { get; set; }
         public bool hasSeatingDistribution { get; set; }
         public string roomLayout { get; set; }
+        public Nullable<bool> deleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<events> events { get; set; }

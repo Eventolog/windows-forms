@@ -91,6 +91,7 @@
           <Property Name="capacity" Type="int" />
           <Property Name="hasSeatingDistribution" Type="bit" Nullable="false" />
           <Property Name="roomLayout" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="deleted" Type="bit" />
           <Property Name="description" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="seats">
@@ -536,6 +537,7 @@
           <NavigationProperty Name="seats" Relationship="Self.fk_seats_room" FromRole="rooms" ToRole="seats" />
           <Property Name="hasSeatingDistribution" Type="Boolean" Nullable="false" />
           <Property Name="roomLayout" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
         </EntityType>
         <EntityType Name="seats">
           <Key>
@@ -948,6 +950,7 @@
           <EntitySetMapping Name="rooms">
             <EntityTypeMapping TypeName="eventologyModel.rooms">
               <MappingFragment StoreEntitySet="rooms">
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
                 <ScalarProperty Name="roomLayout" ColumnName="roomLayout" />
                 <ScalarProperty Name="hasSeatingDistribution" ColumnName="hasSeatingDistribution" />
                 <ScalarProperty Name="id" ColumnName="id" />

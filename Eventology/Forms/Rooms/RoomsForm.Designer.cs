@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.labelRooms = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
             this.btnAddRoom = new System.Windows.Forms.Button();
             this.btnEditRoom = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRooms
@@ -48,20 +48,20 @@
             this.labelRooms.TabIndex = 5;
             this.labelRooms.Text = "Sales";
             // 
-            // dataGridView1
+            // dataGridViewRooms
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(461, 341);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridViewRooms.AllowUserToAddRows = false;
+            this.dataGridViewRooms.AllowUserToDeleteRows = false;
+            this.dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRooms.Location = new System.Drawing.Point(65, 96);
+            this.dataGridViewRooms.Name = "dataGridViewRooms";
+            this.dataGridViewRooms.ReadOnly = true;
+            this.dataGridViewRooms.Size = new System.Drawing.Size(542, 341);
+            this.dataGridViewRooms.TabIndex = 6;
             // 
             // btnAddRoom
             // 
-            this.btnAddRoom.Location = new System.Drawing.Point(532, 96);
+            this.btnAddRoom.Location = new System.Drawing.Point(613, 96);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
             this.btnAddRoom.TabIndex = 7;
@@ -71,36 +71,38 @@
             // 
             // btnEditRoom
             // 
-            this.btnEditRoom.Location = new System.Drawing.Point(532, 125);
+            this.btnEditRoom.Location = new System.Drawing.Point(613, 125);
             this.btnEditRoom.Name = "btnEditRoom";
             this.btnEditRoom.Size = new System.Drawing.Size(75, 23);
             this.btnEditRoom.TabIndex = 8;
             this.btnEditRoom.Text = "Editar";
             this.btnEditRoom.UseVisualStyleBackColor = true;
+            this.btnEditRoom.Click += new System.EventHandler(this.btnEditRoom_Click);
             // 
-            // Delete
+            // btnDelete
             // 
-            this.Delete.Location = new System.Drawing.Point(532, 154);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(75, 23);
-            this.Delete.TabIndex = 9;
-            this.Delete.Text = "Eliminar";
-            this.Delete.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(613, 154);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // RoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1065, 505);
-            this.Controls.Add(this.Delete);
+            this.ClientSize = new System.Drawing.Size(854, 505);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEditRoom);
             this.Controls.Add(this.btnAddRoom);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewRooms);
             this.Controls.Add(this.labelRooms);
             this.Name = "RoomsForm";
             this.Text = "Rooms";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,9 +111,9 @@
         #endregion
 
         private System.Windows.Forms.Label labelRooms;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewRooms;
         private System.Windows.Forms.Button btnAddRoom;
         private System.Windows.Forms.Button btnEditRoom;
-        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

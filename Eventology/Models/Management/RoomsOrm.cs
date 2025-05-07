@@ -14,17 +14,13 @@ namespace Eventology.Models.Management
         /// Selects all rooms from the database.
         /// </summary>
         /// <returns>A list of rooms with their id and name.</returns>
-        public static List<object> SelectAllRooms()
+        public static List<Models.rooms> SelectAllRooms()
         {
             try
             {
                 return Orm.db.rooms
-                    .Select(r => new
-                    {
-                        r.id,
-                        r.name
-                    })
-                    .ToList<object>();
+                     .Where(r => r.deleted == false)
+                    .ToList();
             }
             catch (SqlException ex)
             {
@@ -35,7 +31,7 @@ namespace Eventology.Models.Management
                 Console.WriteLine("Error general: " + ex.Message);
             }
 
-            return new List<object>();
+            return new List<Models.rooms>();
         }
 
         /// <summary>
@@ -47,6 +43,8 @@ namespace Eventology.Models.Management
         {
             try
             {
+                room.deleted = false;
+
                 // Add the new room to the database
                 Orm.db.rooms.Add(room);
 
@@ -105,20 +103,22 @@ namespace Eventology.Models.Management
         }
 
         /// <summary>
-        /// Deletes a room from the database by its id.
+        /// Deletes a room from the database.
         /// </summary>
         /// <param name="id">The id of the room to delete.</param>
         /// <returns>True if the room was successfully deleted; otherwise, false.</returns>
-        public static bool DeleteRoomById(int id)
+        public static bool DeleteRoom(Models.rooms room)
         {
             try
             {
-                var room = Orm.db.rooms.Find(id);
                 if (room != null)
                 {
-                    Orm.db.rooms.Remove(room);
-                    Orm.db.SaveChanges();
-                    return true;
+                    // Remove related entities first
+                    room.deleted = true;
+                    if (RoomsOrm.UpdateRoom(room)){
+                        return true;
+                    }
+                    return false;
                 }
             }
             catch (SqlException ex)
@@ -128,9 +128,12 @@ namespace Eventology.Models.Management
             catch (Exception ex)
             {
                 Console.WriteLine("Error general: " + ex.Message);
+                if (ex.InnerException != null)
+                    Console.WriteLine("Inner: " + ex.InnerException.Message);
             }
 
             return false;
         }
+
     }
 }

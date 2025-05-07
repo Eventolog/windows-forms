@@ -4,6 +4,10 @@ using System.Windows.Forms;
 
 namespace Eventology.Forms.Rooms
 {
+
+    /// <summary>
+    /// Modal used to create or updet a room and its selected distribution
+    /// </summary>
     public partial class UpsertRoomModal : Form
     {
         /// <summary>
@@ -11,31 +15,69 @@ namespace Eventology.Forms.Rooms
         /// </summary>
         String distributionJson = "";
 
+        /// <summary>
+        /// The room object to be updated
+        /// </summary>
         Models.rooms updatingRoom = null;
+
+        /// <summary>
+        /// Indicates if an object is being updated or not
+        /// </summary>
         bool updating = false;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpsertRoomModal"/> class for creating a new room.
+        /// </summary>
         public UpsertRoomModal()
         {
             genericContructor();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpsertRoomModal"/> class for 
+        /// updating an existing room and fill modal inputs with the room data.
+        /// </summary>
+        /// <param name="room">The room object to be updated.</param>
         public UpsertRoomModal(Models.rooms room)
         {
             genericContructor();
             this.updatingRoom = room;
             this.updating = true;
+
+            // fill modal inputs
+            textBoxName.Text = room.name;
+            textBoxDescription.Text = room.description;
+            numericUpDownCapacity.Value = (int) room.capacity;
+            checkBoxDistributionsWithSeats.Checked = (bool) checkBoxDistributionsWithSeats.Checked;
+            this.distributionJson = room.roomLayout;
         }
 
+        /// Shared constructor logic for initializing the form components and default settings.
+        /// Hides the Edit Distribution button by default.
+        /// </summary>
         private void genericContructor()
         {
             InitializeComponent();
             buttonEditDistribution.Visible = false;
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the checkBoxDistributionsWithSeats control
+        /// Toggles the visibility of the 'Edit Distribution' button based on whether the room 
+        /// is configured with seats.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkBoxDistributionsWithSeats_CheckedChanged(object sender, EventArgs e)
         {
             buttonEditDistribution.Visible = checkBoxDistributionsWithSeats.Checked;
         }
 
+        /// <summary>
+        /// Handles onClick event and validate data and insert or update a room into the db
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text.Trim();
@@ -50,7 +92,22 @@ namespace Eventology.Forms.Rooms
             }
             if (updating)
             {
+                updatingRoom.name = name;
+                updatingRoom.description = description;
+                updatingRoom.capacity = capacity;
+                updatingRoom.hasSeatingDistribution = hasSeatingDistribution;
+                updatingRoom.roomLayout = this.distributionJson;
 
+                if (RoomsOrm.UpdateRoom(updatingRoom))
+                {
+                    MessageBox.Show("Sala actualitzada correctament.", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurregut un error inesperat actualitzant la sala.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -77,11 +134,21 @@ namespace Eventology.Forms.Rooms
             
         }
 
+        /// <summary>
+        /// Handles onClick event, cancel the insert/edit and close the modal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Opens a modal to edit the room distribution of the room being created/edited
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonEditDistribution_Click(object sender, EventArgs e)
         {
             var modal = new RoomDistributionEditorModal();
