@@ -1,12 +1,22 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Eventology.Models.Management
 {
+    /// <summary>
+    /// Provides access to the database context and centralized SQL error handling.
+    /// </summary>
     class Orm
     {
+        /// <summary>
+        /// Entity Framework database context for accessing the Eventology database.
+        /// </summary>
         public static eventologyEntities db = new eventologyEntities();
 
+        /// <summary>
+        /// Returns a human-readable error message based on a SqlException.
+        /// </summary>
+        /// <param name="sqlException">The SqlException thrown during a database operation.</param>
+        /// <returns>A string describing the error in a friendly or informative way.</returns>
         public static string ErrorMessage(SqlException sqlException)
         {
             string message = "";

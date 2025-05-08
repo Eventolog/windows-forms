@@ -3,32 +3,49 @@ using System.Windows.Forms;
 using Eventology.Models;
 using Eventology.Models.Management;
 
+/// <summary>
+/// UsersForm manages organizers: create, update, delete, and display them in a grid.
+/// </summary>
 namespace Eventology.Forms
 {
     public partial class UsersForm : Form
     {
+        /// <summary>
+        /// Tracks the currently selected organizer's ID (nullable).
+        /// </summary>
         private int? selectedUserId = null;
 
+        /// <summary>
+        /// Initializes the form and loads organizers into the grid.
+        /// </summary>
         public UsersForm()
         {
             InitializeComponent();
 
             LoadOrganizers();
 
-            // No he trobat cap manera de fer-ho funcionar
-            ClearFields();
-            buttonClean.PerformClick();
+            // Ensure textboxes are cleared on form load
+            this.Shown += (s, e) => ClearFields();
         }
 
+        /// <summary>
+        /// Loads all organizers from the database and fills the DataGridView.
+        /// </summary>
         private void LoadOrganizers()
         {
             var organizers = UsersOrm.SelectOrganizers();
             dataGridViewOrganizers.DataSource = organizers;
+
             if (dataGridViewOrganizers.Columns.Contains("id"))
                 dataGridViewOrganizers.Columns["id"].Visible = false;
-            dataGridViewOrganizers.Rows[0].Selected = false;
+
+            if (dataGridViewOrganizers.Rows.Count > 0)
+                dataGridViewOrganizers.ClearSelection(); // prevent pre-selection
         }
 
+        /// <summary>
+        /// Handles adding a new organizer or updating an existing one.
+        /// </summary>
         private void buttonAddOrganizer_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text.Trim();
@@ -43,7 +60,7 @@ namespace Eventology.Forms
 
             if (selectedUserId.HasValue)
             {
-                // Update  
+                // Update existing organizer
                 var updated = UsersOrm.UpdateUser(selectedUserId.Value, name, email, password);
                 if (updated)
                 {
@@ -58,7 +75,7 @@ namespace Eventology.Forms
             }
             else
             {
-                // Insert  
+                // Insert new organizer
                 var newOrganizer = new users
                 {
                     name = name,
@@ -80,6 +97,9 @@ namespace Eventology.Forms
             }
         }
 
+        /// <summary>
+        /// Fills the textboxes when a row is selected in the DataGridView.
+        /// </summary>
         private void dataGridViewOrganizers_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewOrganizers.SelectedRows.Count > 0)
@@ -92,6 +112,9 @@ namespace Eventology.Forms
             }
         }
 
+        /// <summary>
+        /// Deletes the selected organizer from the database.
+        /// </summary>
         private void buttonDeleteOrganizer_Click(object sender, EventArgs e)
         {
             if (dataGridViewOrganizers.SelectedRows.Count == 0)
@@ -109,6 +132,7 @@ namespace Eventology.Forms
                 {
                     MessageBox.Show("Organitzador eliminat correctament.", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadOrganizers();
+                    ClearFields();
                 }
                 else
                 {
@@ -117,18 +141,26 @@ namespace Eventology.Forms
             }
         }
 
+        /// <summary>
+        /// Clears all textboxes and resets the selected user.
+        /// </summary>
         private void buttonClean_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
 
+        /// <summary>
+        /// Utility method to reset the form fields and clear selection.
+        /// </summary>
         private void ClearFields()
         {
             textBoxName.Text = "";
             textBoxEmail.Text = "";
             textBoxPassword.Text = "";
             selectedUserId = null;
-            dataGridViewOrganizers.ClearSelection();
+
+            if (dataGridViewOrganizers.Rows.Count > 0)
+                dataGridViewOrganizers.ClearSelection();
         }
     }
 }
