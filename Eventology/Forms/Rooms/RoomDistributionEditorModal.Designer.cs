@@ -32,19 +32,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.qtySeat = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSeatsAmount = new System.Windows.Forms.Label();
             this.inputPriceEdit = new System.Windows.Forms.NumericUpDown();
-            this.deleteSeat = new System.Windows.Forms.Button();
+            this.btnDeleteSeat = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.numericPrice = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPreuSeatToAdd = new System.Windows.Forms.Label();
             this.roomPictureBox = new System.Windows.Forms.PictureBox();
             this.btnAddSeat = new System.Windows.Forms.Button();
             this.editSeatGroupbox = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxAmountSeats = new System.Windows.Forms.GroupBox();
             this.groupBoxActions = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveDistribution = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inputPriceEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomPictureBox)).BeginInit();
@@ -97,16 +97,16 @@
             this.qtySeat.TabIndex = 27;
             this.qtySeat.Text = "0";
             // 
-            // label3
+            // lblSeatsAmount
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(426, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Quantitat butaques:";
+            this.lblSeatsAmount.AutoSize = true;
+            this.lblSeatsAmount.BackColor = System.Drawing.Color.Transparent;
+            this.lblSeatsAmount.ForeColor = System.Drawing.Color.White;
+            this.lblSeatsAmount.Location = new System.Drawing.Point(426, 115);
+            this.lblSeatsAmount.Name = "lblSeatsAmount";
+            this.lblSeatsAmount.Size = new System.Drawing.Size(100, 13);
+            this.lblSeatsAmount.TabIndex = 26;
+            this.lblSeatsAmount.Text = "Quantitat butaques:";
             // 
             // inputPriceEdit
             // 
@@ -115,16 +115,16 @@
             this.inputPriceEdit.Size = new System.Drawing.Size(127, 20);
             this.inputPriceEdit.TabIndex = 25;
             // 
-            // deleteSeat
+            // btnDeleteSeat
             // 
-            this.deleteSeat.BackColor = System.Drawing.Color.White;
-            this.deleteSeat.Location = new System.Drawing.Point(18, 115);
-            this.deleteSeat.Name = "deleteSeat";
-            this.deleteSeat.Size = new System.Drawing.Size(132, 41);
-            this.deleteSeat.TabIndex = 24;
-            this.deleteSeat.Text = "Eliminar butaca";
-            this.deleteSeat.UseVisualStyleBackColor = false;
-            this.deleteSeat.Click += new System.EventHandler(this.deleteSeat_Click);
+            this.btnDeleteSeat.BackColor = System.Drawing.Color.White;
+            this.btnDeleteSeat.Location = new System.Drawing.Point(18, 115);
+            this.btnDeleteSeat.Name = "btnDeleteSeat";
+            this.btnDeleteSeat.Size = new System.Drawing.Size(132, 41);
+            this.btnDeleteSeat.TabIndex = 24;
+            this.btnDeleteSeat.Text = "Eliminar butaca";
+            this.btnDeleteSeat.UseVisualStyleBackColor = false;
+            this.btnDeleteSeat.Click += new System.EventHandler(this.deleteSeat_Click);
             // 
             // textBox1
             // 
@@ -141,17 +141,17 @@
             this.numericPrice.Size = new System.Drawing.Size(120, 20);
             this.numericPrice.TabIndex = 22;
             // 
-            // label1
+            // lblPreuSeatToAdd
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(285, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 15);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Preu butaca a afegir";
+            this.lblPreuSeatToAdd.AutoSize = true;
+            this.lblPreuSeatToAdd.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreuSeatToAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreuSeatToAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblPreuSeatToAdd.Location = new System.Drawing.Point(285, 115);
+            this.lblPreuSeatToAdd.Name = "lblPreuSeatToAdd";
+            this.lblPreuSeatToAdd.Size = new System.Drawing.Size(117, 15);
+            this.lblPreuSeatToAdd.TabIndex = 21;
+            this.lblPreuSeatToAdd.Text = "Preu butaca a afegir";
             // 
             // roomPictureBox
             // 
@@ -216,16 +216,16 @@
             this.groupBoxActions.TabIndex = 33;
             this.groupBoxActions.TabStop = false;
             // 
-            // button1
+            // btnSaveDistribution
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(418, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 52);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Guardar Distribucio";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSaveDistribution.BackColor = System.Drawing.Color.White;
+            this.btnSaveDistribution.Location = new System.Drawing.Point(418, 409);
+            this.btnSaveDistribution.Name = "btnSaveDistribution";
+            this.btnSaveDistribution.Size = new System.Drawing.Size(146, 52);
+            this.btnSaveDistribution.TabIndex = 34;
+            this.btnSaveDistribution.Text = "Guardar Distribucio";
+            this.btnSaveDistribution.UseVisualStyleBackColor = false;
+            this.btnSaveDistribution.Click += new System.EventHandler(this.button1_Click);
             // 
             // RoomDistributionEditorModal
             // 
@@ -233,17 +233,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(747, 477);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSaveDistribution);
             this.Controls.Add(this.lblEventName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.qtySeat);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblSeatsAmount);
             this.Controls.Add(this.inputPriceEdit);
-            this.Controls.Add(this.deleteSeat);
+            this.Controls.Add(this.btnDeleteSeat);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.numericPrice);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPreuSeatToAdd);
             this.Controls.Add(this.roomPictureBox);
             this.Controls.Add(this.btnAddSeat);
             this.Controls.Add(this.editSeatGroupbox);
@@ -267,18 +267,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label qtySeat;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSeatsAmount;
         private System.Windows.Forms.NumericUpDown inputPriceEdit;
-        private System.Windows.Forms.Button deleteSeat;
+        private System.Windows.Forms.Button btnDeleteSeat;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.NumericUpDown numericPrice;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPreuSeatToAdd;
         private System.Windows.Forms.PictureBox roomPictureBox;
         private System.Windows.Forms.Button btnAddSeat;
         private System.Windows.Forms.GroupBox editSeatGroupbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBoxAmountSeats;
         private System.Windows.Forms.GroupBox groupBoxActions;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveDistribution;
     }
 }

@@ -64,11 +64,17 @@ namespace Eventology.Forms.Rooms
         private string generatedJson = "";
 
         /// <summary>
+        /// amount of seats that should exists when saving
+        /// </summary>
+        private int seatsCapacity;
+
+        /// <summary>
         /// Initialize a room distribution
         /// </summary>
-        public RoomDistributionEditorModal()
+        public RoomDistributionEditorModal(int seatsCapacity)
         {
             InitializeComponent();
+            this.seatsCapacity = seatsCapacity;
             scenery = new Scenery(new Rectangle(0, 0, 400, 50));
             elements.Add(scenery);
 
@@ -88,10 +94,12 @@ namespace Eventology.Forms.Rooms
         /// <summary>
         /// Initializes the form with the provided JSON layout.
         /// </summary>
-        public RoomDistributionEditorModal(string json) : this() // Calls the default constructor first
+        public RoomDistributionEditorModal(string json, int seatsCapacity) : this(seatsCapacity) // Calls the default constructor first
         {
             try
             {
+                this.seatsCapacity = seatsCapacity;
+
                 // Parse the JSON using JObject
                 var layoutData = JObject.Parse(json);
 
@@ -429,7 +437,7 @@ namespace Eventology.Forms.Rooms
             int seatId = seatsAmount;
             decimal price = numericPrice.Value;
             Element seat = new Seat(new Rectangle(150, 150, 30, 30), price, seatId);
-            qtySeat.Text = seatsExistingAmount.ToString();
+            qtySeat.Text = seatsExistingAmount.ToString() + " / " + this.seatsCapacity;
             elements.Add(seat);
             Render();
         }
@@ -512,8 +520,16 @@ namespace Eventology.Forms.Rooms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            this.Close();
+            if(seatsExistingAmount != seatsCapacity)
+            {
+                MessageBoxUtility.ShowError($"La quantitat de butaques creades ha de ser igual a la capacitat definida per aquesta sala en el modal anterior. S'han de crear {seatsCapacity} butaques, però actualment en hi ha {seatsExistingAmount}.");
+            }
+            else
+            {
+                MessageBoxUtility.ShowInfo("Distribucio editada correctament.");
+                DialogResult = DialogResult.OK;
+                this.Close();
+            } 
         }
     }
 
