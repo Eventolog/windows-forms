@@ -423,7 +423,7 @@ namespace Eventology.Forms.Rooms
 
             string json = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
             Console.WriteLine(json);
-            textBox1.Text = json;
+            textBoxJsonVisualizer.Text = json;
             generatedJson = json;
         }
 

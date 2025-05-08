@@ -35,7 +35,7 @@
             this.lblSeatsAmount = new System.Windows.Forms.Label();
             this.numericPriceEditSeat = new System.Windows.Forms.NumericUpDown();
             this.btnDeleteSeat = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxJsonVisualizer = new System.Windows.Forms.TextBox();
             this.numericPriceAddSeat = new System.Windows.Forms.NumericUpDown();
             this.roomPictureBox = new System.Windows.Forms.PictureBox();
             this.btnAddSeat = new System.Windows.Forms.Button();
@@ -142,13 +142,14 @@
             this.btnDeleteSeat.UseVisualStyleBackColor = false;
             this.btnDeleteSeat.Click += new System.EventHandler(this.deleteSeat_Click);
             // 
-            // textBox1
+            // textBoxJsonVisualizer
             // 
-            this.textBox1.Location = new System.Drawing.Point(418, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 156);
-            this.textBox1.TabIndex = 23;
+            this.textBoxJsonVisualizer.Location = new System.Drawing.Point(418, 12);
+            this.textBoxJsonVisualizer.Multiline = true;
+            this.textBoxJsonVisualizer.Name = "textBoxJsonVisualizer";
+            this.textBoxJsonVisualizer.Size = new System.Drawing.Size(297, 156);
+            this.textBoxJsonVisualizer.TabIndex = 23;
+            this.textBoxJsonVisualizer.Visible = false;
             // 
             // numericPriceAddSeat
             // 
@@ -383,7 +384,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.numericPriceEditSeat);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxJsonVisualizer);
             this.Controls.Add(this.roomPictureBox);
             this.Controls.Add(this.editSeatGroupbox);
             this.Controls.Add(this.groupBoxAmountSeats);
@@ -416,7 +417,7 @@
         private System.Windows.Forms.Label lblSeatsAmount;
         private System.Windows.Forms.NumericUpDown numericPriceEditSeat;
         private System.Windows.Forms.Button btnDeleteSeat;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxJsonVisualizer;
         private System.Windows.Forms.NumericUpDown numericPriceAddSeat;
         private System.Windows.Forms.PictureBox roomPictureBox;
         private System.Windows.Forms.Button btnAddSeat;
