@@ -136,5 +136,47 @@ namespace Eventology.Models.Management
                 return false;
             }
         }
+
+        public static int GetTotalEvents()
+        {
+            try
+            {
+                return Orm.db.events.Count();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error comptant esdeveniments: " + ex.Message);
+                return 0;
+            }
+        }
+
+        public static List<object> GetUpcomingEvents(int top)
+        {
+            try
+            {
+                var now = DateTime.Now;
+
+                var result = (from e in Orm.db.events
+                              join r in Orm.db.rooms on e.room_id equals r.id
+                              where e.start_time >= now
+                              orderby e.start_time
+                              select new
+                              {
+                                  e.name,
+                                  e.start_time,
+                                  RoomName = r.name,
+                                  e.status
+                              })
+                              .Take(top)
+                              .ToList<object>();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error obtenint esdeveniments propers: " + ex.Message);
+                return new List<object>();
+            }
+        }
     }
 }

@@ -25,6 +25,19 @@ namespace Eventology.Models.Management
             return false;
         }
 
+        public static int GetTotalUsers()
+        {
+            try
+            {
+                return Orm.db.users.Count();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error comptant usuaris: " + ex.Message);
+                return 0;
+            }
+        }
+
         public static List<object> SelectUsersByEvent(int eventId)
         {
             try
