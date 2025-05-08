@@ -37,6 +37,7 @@
             this.buttonDeleteUser = new System.Windows.Forms.Button();
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.buttonSeeEvent = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +103,7 @@
             this.buttonAddEvent.Location = new System.Drawing.Point(517, 89);
             this.buttonAddEvent.Name = "buttonAddEvent";
             this.buttonAddEvent.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.buttonAddEvent.Size = new System.Drawing.Size(56, 23);
+            this.buttonAddEvent.Size = new System.Drawing.Size(68, 23);
             this.buttonAddEvent.TabIndex = 9;
             this.buttonAddEvent.Text = "Afegir";
             this.buttonAddEvent.UseVisualStyleBackColor = true;
@@ -110,9 +111,9 @@
             // 
             // buttonDeleteEvent
             // 
-            this.buttonDeleteEvent.Location = new System.Drawing.Point(517, 118);
+            this.buttonDeleteEvent.Location = new System.Drawing.Point(517, 147);
             this.buttonDeleteEvent.Name = "buttonDeleteEvent";
-            this.buttonDeleteEvent.Size = new System.Drawing.Size(56, 23);
+            this.buttonDeleteEvent.Size = new System.Drawing.Size(68, 23);
             this.buttonDeleteEvent.TabIndex = 10;
             this.buttonDeleteEvent.Text = "Eliminar";
             this.buttonDeleteEvent.UseVisualStyleBackColor = true;
@@ -122,7 +123,7 @@
             // 
             this.buttonDeleteUser.Location = new System.Drawing.Point(975, 118);
             this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(56, 23);
+            this.buttonDeleteUser.Size = new System.Drawing.Size(68, 23);
             this.buttonDeleteUser.TabIndex = 12;
             this.buttonDeleteUser.Text = "Eliminar";
             this.buttonDeleteUser.UseVisualStyleBackColor = true;
@@ -132,7 +133,7 @@
             // 
             this.buttonAddUser.Location = new System.Drawing.Point(975, 89);
             this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(56, 23);
+            this.buttonAddUser.Size = new System.Drawing.Size(68, 23);
             this.buttonAddUser.TabIndex = 11;
             this.buttonAddUser.Text = "Afegir";
             this.buttonAddUser.UseVisualStyleBackColor = true;
@@ -148,12 +149,22 @@
             this.buttonSeeEvent.UseVisualStyleBackColor = true;
             this.buttonSeeEvent.Click += new System.EventHandler(this.buttonSeeEvent_Click);
             // 
+            // buttonModify
+            // 
+            this.buttonModify.Location = new System.Drawing.Point(517, 118);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(68, 23);
+            this.buttonModify.TabIndex = 14;
+            this.buttonModify.Text = "Modificar";
+            this.buttonModify.UseVisualStyleBackColor = true;
+            // 
             // EventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1065, 505);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.buttonSeeEvent);
             this.Controls.Add(this.buttonDeleteUser);
             this.Controls.Add(this.buttonAddUser);
@@ -183,5 +194,6 @@
         private System.Windows.Forms.Button buttonDeleteUser;
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.Button buttonSeeEvent;
+        private System.Windows.Forms.Button buttonModify;
     }
 }

@@ -37,7 +37,7 @@ namespace Eventology.Forms
 
         private void buttonAddEvent_Click(object sender, EventArgs e)
         {
-            var modal = new AddEventModal();
+            var modal = new UpsertEventModal();
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 LoadEvents();

@@ -94,11 +94,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Events\AddEventModal.cs">
+    <Compile Include="Forms\Events\UpsertEventModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Events\AddEventModal.Designer.cs">
-      <DependentUpon>AddEventModal.cs</DependentUpon>
+    <Compile Include="Forms\Events\UpsertEventModal.Designer.cs">
+      <DependentUpon>UpsertEventModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Events\AddUserModal.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Events\AddEventModal.resx">
-      <DependentUpon>AddEventModal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Events\UpsertEventModal.resx">
+      <DependentUpon>UpsertEventModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Events\AddUserModal.resx">
       <DependentUpon>AddUserModal.cs</DependentUpon>

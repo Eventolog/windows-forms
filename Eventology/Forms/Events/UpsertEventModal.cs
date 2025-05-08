@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Eventology.Forms
 {
-    public partial class AddEventModal : Form
+    public partial class UpsertEventModal : Form
     {
-        public AddEventModal()
+        public UpsertEventModal()
         {
             InitializeComponent();
 

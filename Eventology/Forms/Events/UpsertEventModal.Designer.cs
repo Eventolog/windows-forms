@@ -1,6 +1,6 @@
 ﻿namespace Eventology.Forms
 {
-    partial class AddEventModal
+    partial class UpsertEventModal
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEventModal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpsertEventModal));
             this.labelRoom = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -227,7 +227,7 @@
             this.comboBoxRoom.Size = new System.Drawing.Size(185, 21);
             this.comboBoxRoom.TabIndex = 34;
             // 
-            // AddEventModal
+            // UpsertEventModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,8 +250,8 @@
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddEventModal";
-            this.Text = "Afegir Event";
+            this.Name = "UpsertEventModal";
+            this.Text = "Gestionar Event";
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
