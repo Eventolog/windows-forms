@@ -115,5 +115,22 @@ namespace Eventology.Forms
                 }
             }
         }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEvents.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un esdeveniment per modificar.", "Cap selecció", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int eventId = Convert.ToInt32(dataGridViewEvents.SelectedRows[0].Cells["id"].Value);
+            var modal = new UpsertEventModal(eventId);
+
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                LoadEvents();
+            }
+        }
     }
 }

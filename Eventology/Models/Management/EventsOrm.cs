@@ -88,5 +88,44 @@ namespace Eventology.Models.Management
 
             return false;
         }
+
+        public static Models.events GetEventById(int eventId)
+        {
+            try
+            {
+                return Orm.db.events.FirstOrDefault(ev => ev.id == eventId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en obtenir esdeveniment: " + ex.Message);
+                return null;
+            }
+        }
+
+        public static bool UpdateEvent(int eventId, string name, string description, DateTime start, DateTime end, string status, int organizerId, int roomId)
+        {
+            try
+            {
+                var ev = Orm.db.events.FirstOrDefault(e => e.id == eventId);
+                if (ev == null)
+                    return false;
+
+                ev.name = name;
+                ev.description = description;
+                ev.start_time = start;
+                ev.end_time = end;
+                ev.status = status;
+                ev.organizer_id = organizerId;
+                ev.room_id = roomId;
+
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en actualitzar esdeveniment: " + ex.Message);
+                return false;
+            }
+        }
     }
 }
