@@ -105,63 +105,84 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(50, 52);
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(33, 52);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(29, 13);
+            this.labelName.Size = new System.Drawing.Size(32, 13);
             this.labelName.TabIndex = 7;
             this.labelName.Text = "Nom";
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(50, 90);
+            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.ForeColor = System.Drawing.Color.White;
+            this.labelDescription.Location = new System.Drawing.Point(33, 90);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(57, 13);
+            this.labelDescription.Size = new System.Drawing.Size(67, 13);
             this.labelDescription.TabIndex = 8;
             this.labelDescription.Text = "Descripció";
             // 
             // labelInit
             // 
             this.labelInit.AutoSize = true;
+            this.labelInit.BackColor = System.Drawing.Color.Transparent;
+            this.labelInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInit.ForeColor = System.Drawing.Color.White;
             this.labelInit.Location = new System.Drawing.Point(560, 52);
             this.labelInit.Name = "labelInit";
-            this.labelInit.Size = new System.Drawing.Size(26, 13);
+            this.labelInit.Size = new System.Drawing.Size(31, 13);
             this.labelInit.TabIndex = 9;
             this.labelInit.Text = "Inici";
             // 
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
+            this.labelEnd.BackColor = System.Drawing.Color.Transparent;
+            this.labelEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnd.ForeColor = System.Drawing.Color.White;
             this.labelEnd.Location = new System.Drawing.Point(560, 93);
             this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(29, 13);
+            this.labelEnd.Size = new System.Drawing.Size(34, 13);
             this.labelEnd.TabIndex = 10;
             this.labelEnd.Text = "Final";
             // 
             // labelState
             // 
             this.labelState.AutoSize = true;
+            this.labelState.BackColor = System.Drawing.Color.Transparent;
+            this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelState.ForeColor = System.Drawing.Color.White;
             this.labelState.Location = new System.Drawing.Point(375, 52);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(31, 13);
+            this.labelState.Size = new System.Drawing.Size(36, 13);
             this.labelState.TabIndex = 11;
             this.labelState.Text = "Estat";
             // 
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.Location = new System.Drawing.Point(50, 195);
+            this.labelRoom.BackColor = System.Drawing.Color.Transparent;
+            this.labelRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoom.ForeColor = System.Drawing.Color.White;
+            this.labelRoom.Location = new System.Drawing.Point(33, 195);
             this.labelRoom.Name = "labelRoom";
-            this.labelRoom.Size = new System.Drawing.Size(28, 13);
+            this.labelRoom.Size = new System.Drawing.Size(32, 13);
             this.labelRoom.TabIndex = 12;
             this.labelRoom.Text = "Sala";
             // 
             // labelOrganizer
             // 
             this.labelOrganizer.AutoSize = true;
+            this.labelOrganizer.BackColor = System.Drawing.Color.Transparent;
+            this.labelOrganizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrganizer.ForeColor = System.Drawing.Color.White;
             this.labelOrganizer.Location = new System.Drawing.Point(375, 199);
             this.labelOrganizer.Name = "labelOrganizer";
-            this.labelOrganizer.Size = new System.Drawing.Size(67, 13);
+            this.labelOrganizer.Size = new System.Drawing.Size(79, 13);
             this.labelOrganizer.TabIndex = 13;
             this.labelOrganizer.Text = "Organitzador";
             // 
@@ -169,6 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(800, 281);
             this.Controls.Add(this.labelOrganizer);
             this.Controls.Add(this.labelRoom);

@@ -45,35 +45,44 @@
             this.dateTimePickerEndTime = new System.Windows.Forms.DateTimePicker();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.comboBoxOrganizer = new System.Windows.Forms.ComboBox();
-            this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
+            this.labelRoom.BackColor = System.Drawing.Color.Transparent;
+            this.labelRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRoom.ForeColor = System.Drawing.Color.White;
             this.labelRoom.Location = new System.Drawing.Point(13, 166);
             this.labelRoom.Name = "labelRoom";
-            this.labelRoom.Size = new System.Drawing.Size(28, 13);
+            this.labelRoom.Size = new System.Drawing.Size(32, 13);
             this.labelRoom.TabIndex = 18;
             this.labelRoom.Text = "Sala";
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
+            this.labelDescription.BackColor = System.Drawing.Color.Transparent;
+            this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescription.ForeColor = System.Drawing.Color.White;
             this.labelDescription.Location = new System.Drawing.Point(13, 64);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(57, 13);
+            this.labelDescription.Size = new System.Drawing.Size(67, 13);
             this.labelDescription.TabIndex = 17;
             this.labelDescription.Text = "Descripció";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.ForeColor = System.Drawing.Color.White;
             this.labelName.Location = new System.Drawing.Point(13, 26);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(29, 13);
+            this.labelName.Size = new System.Drawing.Size(32, 13);
             this.labelName.TabIndex = 16;
             this.labelName.Text = "Nom";
             // 
@@ -95,36 +104,48 @@
             // labelOrganizer
             // 
             this.labelOrganizer.AutoSize = true;
+            this.labelOrganizer.BackColor = System.Drawing.Color.Transparent;
+            this.labelOrganizer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrganizer.ForeColor = System.Drawing.Color.White;
             this.labelOrganizer.Location = new System.Drawing.Point(13, 330);
             this.labelOrganizer.Name = "labelOrganizer";
-            this.labelOrganizer.Size = new System.Drawing.Size(67, 13);
+            this.labelOrganizer.Size = new System.Drawing.Size(79, 13);
             this.labelOrganizer.TabIndex = 26;
             this.labelOrganizer.Text = "Organitzador";
             // 
             // labelState
             // 
             this.labelState.AutoSize = true;
+            this.labelState.BackColor = System.Drawing.Color.Transparent;
+            this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelState.ForeColor = System.Drawing.Color.White;
             this.labelState.Location = new System.Drawing.Point(13, 287);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(31, 13);
+            this.labelState.Size = new System.Drawing.Size(36, 13);
             this.labelState.TabIndex = 25;
             this.labelState.Text = "Estat";
             // 
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
+            this.labelEnd.BackColor = System.Drawing.Color.Transparent;
+            this.labelEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnd.ForeColor = System.Drawing.Color.White;
             this.labelEnd.Location = new System.Drawing.Point(13, 249);
             this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(29, 13);
+            this.labelEnd.Size = new System.Drawing.Size(34, 13);
             this.labelEnd.TabIndex = 24;
             this.labelEnd.Text = "Final";
             // 
             // labelInit
             // 
             this.labelInit.AutoSize = true;
+            this.labelInit.BackColor = System.Drawing.Color.Transparent;
+            this.labelInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInit.ForeColor = System.Drawing.Color.White;
             this.labelInit.Location = new System.Drawing.Point(13, 209);
             this.labelInit.Name = "labelInit";
-            this.labelInit.Size = new System.Drawing.Size(26, 13);
+            this.labelInit.Size = new System.Drawing.Size(31, 13);
             this.labelInit.TabIndex = 23;
             this.labelInit.Text = "Inici";
             // 
@@ -189,6 +210,10 @@
             this.comboBoxOrganizer.Size = new System.Drawing.Size(121, 21);
             this.comboBoxOrganizer.TabIndex = 33;
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataSource = typeof(Eventology.Models.users);
+            // 
             // comboBoxRoom
             // 
             this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -202,14 +227,11 @@
             this.comboBoxRoom.Size = new System.Drawing.Size(185, 21);
             this.comboBoxRoom.TabIndex = 34;
             // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataSource = typeof(Eventology.Models.users);
-            // 
             // AddEventModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(465, 420);
             this.Controls.Add(this.comboBoxRoom);
             this.Controls.Add(this.comboBoxOrganizer);
