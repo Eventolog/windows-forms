@@ -12,7 +12,12 @@ namespace Eventology.Forms
         public UsersForm()
         {
             InitializeComponent();
+
             LoadOrganizers();
+
+            // No he trobat cap manera de fer-ho funcionar
+            ClearFields();
+            buttonClean.PerformClick();
         }
 
         private void LoadOrganizers()
@@ -21,6 +26,7 @@ namespace Eventology.Forms
             dataGridViewOrganizers.DataSource = organizers;
             if (dataGridViewOrganizers.Columns.Contains("id"))
                 dataGridViewOrganizers.Columns["id"].Visible = false;
+            dataGridViewOrganizers.Rows[0].Selected = false;
         }
 
         private void buttonAddOrganizer_Click(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace Eventology.Forms
 
             if (selectedUserId.HasValue)
             {
-                // Update
+                // Update  
                 var updated = UsersOrm.UpdateUser(selectedUserId.Value, name, email, password);
                 if (updated)
                 {
@@ -52,7 +58,7 @@ namespace Eventology.Forms
             }
             else
             {
-                // Insert
+                // Insert  
                 var newOrganizer = new users
                 {
                     name = name,
