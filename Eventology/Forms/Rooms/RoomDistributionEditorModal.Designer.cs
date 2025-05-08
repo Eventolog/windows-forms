@@ -74,9 +74,9 @@
             this.lblEventName.ForeColor = System.Drawing.Color.White;
             this.lblEventName.Location = new System.Drawing.Point(8, 40);
             this.lblEventName.Name = "lblEventName";
-            this.lblEventName.Size = new System.Drawing.Size(276, 36);
+            this.lblEventName.Size = new System.Drawing.Size(382, 36);
             this.lblEventName.TabIndex = 30;
-            this.lblEventName.Text = "Cinema a la fresca";
+            this.lblEventName.Text = "Nom de la distribucio/sala";
             // 
             // label4
             // 

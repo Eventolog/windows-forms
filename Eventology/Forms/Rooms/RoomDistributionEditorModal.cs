@@ -70,11 +70,14 @@ namespace Eventology.Forms.Rooms
 
         /// <summary>
         /// Initialize a room distribution
+        /// <param name="seatsCapacity">Amount of seats to be on the seats distribution</param>
+        /// <param name="roomName">Name of the room wich distribution is being edited</param>
         /// </summary>
-        public RoomDistributionEditorModal(int seatsCapacity)
+        public RoomDistributionEditorModal(int seatsCapacity, string roomName)
         {
             InitializeComponent();
             this.seatsCapacity = seatsCapacity;
+            lblEventName.Text = roomName;
             scenery = new Scenery(new Rectangle(0, 0, 400, 50));
             elements.Add(scenery);
 
@@ -93,8 +96,10 @@ namespace Eventology.Forms.Rooms
         /// <param name="json">The JSON string representing a room layout</param>
         /// <summary>
         /// Initializes the form with the provided JSON layout.
+        /// <param name="seatsCapacity">Amount of seats to be on the seats distribution</param>
+        /// <param name="roomName">Name of the room wich distribution is being edited</param>
         /// </summary>
-        public RoomDistributionEditorModal(string json, int seatsCapacity) : this(seatsCapacity) // Calls the default constructor first
+        public RoomDistributionEditorModal(string json, int seatsCapacity, string roomName) : this(seatsCapacity, roomName) // Calls the default constructor first
         {
             try
             {

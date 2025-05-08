@@ -143,15 +143,15 @@ namespace Eventology.Forms.Rooms
         private void buttonEditDistribution_Click(object sender, EventArgs e)
         {
             int capacity = (int)numericUpDownCapacity.Value;
-
+            string roomName = updatingRoom.name;
             RoomDistributionEditorModal modal;
             if (updating)
             {
-                modal = new RoomDistributionEditorModal(this.updatingRoom.roomLayout, capacity);
+                modal = new RoomDistributionEditorModal(this.updatingRoom.roomLayout, capacity, roomName);
             }
             else
             {
-                modal = new RoomDistributionEditorModal(capacity);
+                modal = new RoomDistributionEditorModal(capacity, roomName);
             }
             if (modal.ShowDialog() == DialogResult.OK)
             {
