@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data.Entity.Infrastructure;
 
 namespace Eventology.Models.Management
 {
@@ -50,22 +51,30 @@ namespace Eventology.Models.Management
             }
         }
 
-        public static bool DeleteEventById(int id)
+        public static bool DeleteEventById(int eventId)
         {
             try
             {
-                var ev = Orm.db.events.Find(id);
-                if (ev != null)
-                {
-                    Orm.db.events.Remove(ev);
-                    Orm.db.SaveChanges();
-                    return true;
-                }
+                var ev = Orm.db.events.FirstOrDefault(e => e.id == eventId);
+                if (ev == null) return false;
+
+                // Eliminar dependències explícitament
+                Orm.db.tickets.RemoveRange(ev.tickets);
+                Orm.db.media.RemoveRange(ev.media);
+
+                Orm.db.events.Remove(ev);
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine("Error eliminant esdeveniment: " + (ex.InnerException?.InnerException?.Message ?? ex.Message));
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error eliminant esdeveniment: " + ex.Message);
+                Console.WriteLine("Error general: " + ex.Message);
             }
+
             return false;
         }
 
