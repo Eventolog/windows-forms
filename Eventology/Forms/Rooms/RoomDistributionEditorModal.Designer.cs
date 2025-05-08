@@ -88,7 +88,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 20);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Editor d\'escenari per l\'event:";
+            this.label4.Text = "Editor d\'escenari per la sala:";
             // 
             // btnEditar
             // 

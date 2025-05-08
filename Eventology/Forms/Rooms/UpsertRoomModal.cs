@@ -143,7 +143,11 @@ namespace Eventology.Forms.Rooms
         private void buttonEditDistribution_Click(object sender, EventArgs e)
         {
             int capacity = (int)numericUpDownCapacity.Value;
-            string roomName = updatingRoom.name;
+            string roomName = textBoxName.Text;
+            if (string.IsNullOrEmpty(roomName))
+            {
+                roomName = "Sala sense nom";
+            }
             RoomDistributionEditorModal modal;
             if (updating)
             {
