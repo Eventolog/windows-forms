@@ -56,6 +56,7 @@ namespace Eventology.Forms.Rooms
 
             // Hide specific navigation or unused columns
             dataGridViewRooms.Columns["id"].Visible = false;
+            dataGridViewRooms.Columns["deleted"].Visible = false;
             dataGridViewRooms.Columns["roomLayout"].Visible = false;
             dataGridViewRooms.Columns["events"].Visible = false;
             dataGridViewRooms.Columns["seats"].Visible = false;

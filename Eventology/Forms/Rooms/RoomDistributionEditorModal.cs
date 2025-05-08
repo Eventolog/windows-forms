@@ -4,6 +4,7 @@ using System.Drawing;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace Eventology.Forms.Rooms
 {
@@ -79,6 +80,90 @@ namespace Eventology.Forms.Rooms
             // initial render
             Render();
         }
+
+        /// <summary>
+        /// Initialize the room distribution editor with an existing layout from JSON
+        /// </summary>
+        /// <param name="json">The JSON string representing a room layout</param>
+        /// <summary>
+        /// Initializes the form with the provided JSON layout.
+        /// </summary>
+        public RoomDistributionEditorModal(string json) : this() // Calls the default constructor first
+        {
+            try
+            {
+                // Parse the JSON using JObject
+                var layoutData = JObject.Parse(json);
+
+                // Clear the current elements
+                elements.Clear();
+
+                // Process the Scenery elements
+                var sceneryArray = layoutData["Scenery"] as JArray;
+                if (sceneryArray != null)
+                {
+                    foreach (var scenery in sceneryArray)
+                    {
+                        var bounds = ParseBounds(scenery["Bounds"].ToString());
+                        var newScenery = new Scenery(bounds);
+                        elements.Add(newScenery);
+                    }
+                }
+
+                // Process the Seat elements
+                var seatsArray = layoutData["Seats"] as JArray;
+                if (seatsArray != null)
+                {
+                    seatsAmount = 0;
+                    seatsExistingAmount = 0;
+
+                    foreach (var seat in seatsArray)
+                    {
+                        var bounds = ParseBounds(seat["Bounds"].ToString());
+                        decimal price = seat["Price"].ToObject<decimal>();
+                        int seatId = ++seatsAmount;
+                        Seat newSeat = new Seat(bounds, price, seatId);
+                        elements.Add(newSeat);
+                        seatsExistingAmount++;
+                    }
+
+                    qtySeat.Text = seatsExistingAmount.ToString();
+                }
+
+                // Re-render the layout after loading the JSON
+                Render();
+            }
+            catch (Exception ex)
+            {
+                MessageBoxUtility.ShowError("Error loading JSON: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Parses the bounds string in the format "X, Y, Width, Height" and returns a Rectangle.
+        /// </summary>
+        /// <param name="boundsStr">The bounds as a string, e.g., "13, 78, 30, 30".</param>
+        /// <returns>A Rectangle object representing the parsed bounds.</returns>
+        private Rectangle ParseBounds(string boundsStr)
+        {
+            // Split the string by commas and parse the individual values
+            var parts = boundsStr.Split(',');
+
+            if (parts.Length == 4)
+            {
+                int x = int.Parse(parts[0].Trim());
+                int y = int.Parse(parts[1].Trim());
+                int width = int.Parse(parts[2].Trim());
+                int height = int.Parse(parts[3].Trim());
+
+                return new Rectangle(x, y, width, height);
+            }
+            else
+            {
+                throw new ArgumentException("Invalid bounds string format");
+            }
+        }
+    
 
         /// <summary>
         /// Handles the MouseDown event on the room picture box.

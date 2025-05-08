@@ -151,9 +151,19 @@
             0,
             0,
             0});
+            this.numericUpDownCapacity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownCapacity.Name = "numericUpDownCapacity";
             this.numericUpDownCapacity.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownCapacity.TabIndex = 29;
+            this.numericUpDownCapacity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // UpsertRoomModal
             // 

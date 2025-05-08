@@ -48,7 +48,7 @@ namespace Eventology.Forms.Rooms
             textBoxName.Text = room.name;
             textBoxDescription.Text = room.description;
             numericUpDownCapacity.Value = (int) room.capacity;
-            checkBoxDistributionsWithSeats.Checked = (bool) checkBoxDistributionsWithSeats.Checked;
+            checkBoxDistributionsWithSeats.Checked = room.hasSeatingDistribution;
             this.distributionJson = room.roomLayout;
         }
 
@@ -151,8 +151,16 @@ namespace Eventology.Forms.Rooms
         /// <param name="e"></param>
         private void buttonEditDistribution_Click(object sender, EventArgs e)
         {
-            var modal = new RoomDistributionEditorModal();
-            if(modal.ShowDialog() == DialogResult.OK)
+            RoomDistributionEditorModal modal;
+            if (updating)
+            {
+                modal = new RoomDistributionEditorModal(this.updatingRoom.roomLayout);
+            }
+            else
+            {
+                modal = new RoomDistributionEditorModal();
+            }
+            if (modal.ShowDialog() == DialogResult.OK)
             {
                 this.distributionJson = modal.getGeneratedJson();
             }
