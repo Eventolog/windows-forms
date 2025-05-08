@@ -7,6 +7,8 @@ namespace Eventology.Forms
 {
     public partial class UsersForm : Form
     {
+        private int? selectedUserId = null;
+
         public UsersForm()
         {
             InitializeComponent();
@@ -33,31 +35,55 @@ namespace Eventology.Forms
                 return;
             }
 
-            var newOrganizer = new users
+            if (selectedUserId.HasValue)
             {
-                name = name,
-                email = email,
-                password = password,
-                type = "organizer"
-            };
-
-            if (UsersOrm.InsertUser(newOrganizer))
-            {
-                MessageBox.Show("Organitzador creat correctament.", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadOrganizers();
-                ClearFields();
+                // Update
+                var updated = UsersOrm.UpdateUser(selectedUserId.Value, name, email, password);
+                if (updated)
+                {
+                    MessageBox.Show("Organitzador actualitzat correctament.", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadOrganizers();
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Error en actualitzar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("No s'ha pogut crear l'organitzador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Insert
+                var newOrganizer = new users
+                {
+                    name = name,
+                    email = email,
+                    password = password,
+                    type = "organizer"
+                };
+
+                if (UsersOrm.InsertUser(newOrganizer))
+                {
+                    MessageBox.Show("Organitzador creat correctament.", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadOrganizers();
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("No s'ha pogut crear l'organitzador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void ClearFields()
+        private void dataGridViewOrganizers_SelectionChanged(object sender, EventArgs e)
         {
-            textBoxName.Text = "";
-            textBoxEmail.Text = "";
-            textBoxPassword.Text = "";
+            if (dataGridViewOrganizers.SelectedRows.Count > 0)
+            {
+                var row = dataGridViewOrganizers.SelectedRows[0];
+                selectedUserId = Convert.ToInt32(row.Cells["id"].Value);
+                textBoxName.Text = row.Cells["name"].Value.ToString();
+                textBoxEmail.Text = row.Cells["email"].Value.ToString();
+                textBoxPassword.Text = row.Cells["password"].Value.ToString();
+            }
         }
 
         private void buttonDeleteOrganizer_Click(object sender, EventArgs e)
@@ -83,6 +109,20 @@ namespace Eventology.Forms
                     MessageBox.Show("No s'ha pogut eliminar l'organitzador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void buttonClean_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void ClearFields()
+        {
+            textBoxName.Text = "";
+            textBoxEmail.Text = "";
+            textBoxPassword.Text = "";
+            selectedUserId = null;
+            dataGridViewOrganizers.ClearSelection();
         }
     }
 }

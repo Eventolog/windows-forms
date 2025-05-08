@@ -183,7 +183,8 @@ namespace Eventology.Models.Management
                     {
                         u.id,
                         u.name,
-                        u.email
+                        u.email,
+                        u.password
                     })
                     .ToList<object>();
             }
@@ -209,6 +210,27 @@ namespace Eventology.Models.Management
             {
                 Console.WriteLine("Error al buscar usuari: " + ex.Message);
                 return null;
+            }
+        }
+
+        public static bool UpdateUser(int id, string name, string email, string password)
+        {
+            try
+            {
+                var user = Orm.db.users.Find(id);
+                if (user == null) return false;
+
+                user.name = name;
+                user.email = email;
+                user.password = password;
+
+                Orm.db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error update: " + ex.Message);
+                return false;
             }
         }
     }

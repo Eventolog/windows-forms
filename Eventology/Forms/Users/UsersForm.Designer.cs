@@ -38,6 +38,7 @@
             this.labelName = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
+            this.buttonClean = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrganizers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             this.dataGridViewOrganizers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewOrganizers.Size = new System.Drawing.Size(521, 330);
             this.dataGridViewOrganizers.TabIndex = 4;
+            this.dataGridViewOrganizers.SelectionChanged += new System.EventHandler(this.dataGridViewOrganizers_SelectionChanged);
             // 
             // buttonAddOrganizer
             // 
@@ -96,17 +98,17 @@
             this.buttonAddOrganizer.Name = "buttonAddOrganizer";
             this.buttonAddOrganizer.Size = new System.Drawing.Size(75, 23);
             this.buttonAddOrganizer.TabIndex = 5;
-            this.buttonAddOrganizer.Text = "Afegir";
+            this.buttonAddOrganizer.Text = "Guardar";
             this.buttonAddOrganizer.UseVisualStyleBackColor = true;
             this.buttonAddOrganizer.Click += new System.EventHandler(this.buttonAddOrganizer_Click);
             // 
             // buttonDeleteOrganizer
             // 
-            this.buttonDeleteOrganizer.Location = new System.Drawing.Point(975, 113);
+            this.buttonDeleteOrganizer.Location = new System.Drawing.Point(974, 115);
             this.buttonDeleteOrganizer.Name = "buttonDeleteOrganizer";
-            this.buttonDeleteOrganizer.Size = new System.Drawing.Size(25, 23);
+            this.buttonDeleteOrganizer.Size = new System.Drawing.Size(61, 23);
             this.buttonDeleteOrganizer.TabIndex = 6;
-            this.buttonDeleteOrganizer.Text = "-";
+            this.buttonDeleteOrganizer.Text = "Eliminar";
             this.buttonDeleteOrganizer.UseVisualStyleBackColor = true;
             this.buttonDeleteOrganizer.Click += new System.EventHandler(this.buttonDeleteOrganizer_Click);
             // 
@@ -146,12 +148,23 @@
             this.labelPassword.TabIndex = 9;
             this.labelPassword.Text = "Contrasenya";
             // 
+            // buttonClean
+            // 
+            this.buttonClean.Location = new System.Drawing.Point(195, 279);
+            this.buttonClean.Name = "buttonClean";
+            this.buttonClean.Size = new System.Drawing.Size(75, 23);
+            this.buttonClean.TabIndex = 11;
+            this.buttonClean.Text = "Netejar";
+            this.buttonClean.UseVisualStyleBackColor = true;
+            this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1065, 505);
+            this.Controls.Add(this.buttonClean);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelName);
@@ -182,5 +195,6 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Button buttonClean;
     }
 }
