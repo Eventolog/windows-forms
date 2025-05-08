@@ -49,7 +49,7 @@
             this.dataGridViewEvents.AllowUserToResizeRows = false;
             this.dataGridViewEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEvents.Location = new System.Drawing.Point(65, 96);
+            this.dataGridViewEvents.Location = new System.Drawing.Point(50, 89);
             this.dataGridViewEvents.MultiSelect = false;
             this.dataGridViewEvents.Name = "dataGridViewEvents";
             this.dataGridViewEvents.ReadOnly = true;
@@ -65,7 +65,7 @@
             this.dataGridViewUsers.AllowUserToResizeRows = false;
             this.dataGridViewUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(621, 96);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(606, 89);
             this.dataGridViewUsers.MultiSelect = false;
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.ReadOnly = true;
@@ -79,7 +79,7 @@
             this.labelEvents.BackColor = System.Drawing.Color.Transparent;
             this.labelEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEvents.ForeColor = System.Drawing.Color.White;
-            this.labelEvents.Location = new System.Drawing.Point(37, 58);
+            this.labelEvents.Location = new System.Drawing.Point(22, 51);
             this.labelEvents.Name = "labelEvents";
             this.labelEvents.Size = new System.Drawing.Size(64, 20);
             this.labelEvents.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.labelUsers.BackColor = System.Drawing.Color.Transparent;
             this.labelUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsers.ForeColor = System.Drawing.Color.White;
-            this.labelUsers.Location = new System.Drawing.Point(586, 58);
+            this.labelUsers.Location = new System.Drawing.Point(571, 51);
             this.labelUsers.Name = "labelUsers";
             this.labelUsers.Size = new System.Drawing.Size(56, 20);
             this.labelUsers.TabIndex = 5;
@@ -99,47 +99,48 @@
             // 
             // buttonAddEvent
             // 
-            this.buttonAddEvent.Location = new System.Drawing.Point(532, 96);
+            this.buttonAddEvent.Location = new System.Drawing.Point(517, 89);
             this.buttonAddEvent.Name = "buttonAddEvent";
-            this.buttonAddEvent.Size = new System.Drawing.Size(29, 23);
+            this.buttonAddEvent.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonAddEvent.Size = new System.Drawing.Size(56, 23);
             this.buttonAddEvent.TabIndex = 9;
-            this.buttonAddEvent.Text = "+";
+            this.buttonAddEvent.Text = "Afegir";
             this.buttonAddEvent.UseVisualStyleBackColor = true;
             this.buttonAddEvent.Click += new System.EventHandler(this.buttonAddEvent_Click);
             // 
             // buttonDeleteEvent
             // 
-            this.buttonDeleteEvent.Location = new System.Drawing.Point(532, 125);
+            this.buttonDeleteEvent.Location = new System.Drawing.Point(517, 118);
             this.buttonDeleteEvent.Name = "buttonDeleteEvent";
-            this.buttonDeleteEvent.Size = new System.Drawing.Size(29, 23);
+            this.buttonDeleteEvent.Size = new System.Drawing.Size(56, 23);
             this.buttonDeleteEvent.TabIndex = 10;
-            this.buttonDeleteEvent.Text = "-";
+            this.buttonDeleteEvent.Text = "Eliminar";
             this.buttonDeleteEvent.UseVisualStyleBackColor = true;
             this.buttonDeleteEvent.Click += new System.EventHandler(this.buttonDeleteEvent_Click);
             // 
             // buttonDeleteUser
             // 
-            this.buttonDeleteUser.Location = new System.Drawing.Point(990, 125);
+            this.buttonDeleteUser.Location = new System.Drawing.Point(975, 118);
             this.buttonDeleteUser.Name = "buttonDeleteUser";
-            this.buttonDeleteUser.Size = new System.Drawing.Size(29, 23);
+            this.buttonDeleteUser.Size = new System.Drawing.Size(56, 23);
             this.buttonDeleteUser.TabIndex = 12;
-            this.buttonDeleteUser.Text = "-";
+            this.buttonDeleteUser.Text = "Eliminar";
             this.buttonDeleteUser.UseVisualStyleBackColor = true;
             this.buttonDeleteUser.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(990, 96);
+            this.buttonAddUser.Location = new System.Drawing.Point(975, 89);
             this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(29, 23);
+            this.buttonAddUser.Size = new System.Drawing.Size(56, 23);
             this.buttonAddUser.TabIndex = 11;
-            this.buttonAddUser.Text = "+";
+            this.buttonAddUser.Text = "Afegir";
             this.buttonAddUser.UseVisualStyleBackColor = true;
             this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // buttonSeeEvent
             // 
-            this.buttonSeeEvent.Location = new System.Drawing.Point(451, 445);
+            this.buttonSeeEvent.Location = new System.Drawing.Point(436, 438);
             this.buttonSeeEvent.Name = "buttonSeeEvent";
             this.buttonSeeEvent.Size = new System.Drawing.Size(75, 23);
             this.buttonSeeEvent.TabIndex = 13;
