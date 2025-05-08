@@ -30,7 +30,7 @@ namespace Eventology.Forms.Rooms
         /// </summary>
         public UpsertRoomModal()
         {
-            genericContructor();
+            InitializeComponent();
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Eventology.Forms.Rooms
         /// <param name="room">The room object to be updated.</param>
         public UpsertRoomModal(Models.rooms room)
         {
-            genericContructor();
+            InitializeComponent();
             this.updatingRoom = room;
             this.updating = true;
 
@@ -50,15 +50,6 @@ namespace Eventology.Forms.Rooms
             numericUpDownCapacity.Value = (int) room.capacity;
             checkBoxDistributionsWithSeats.Checked = room.hasSeatingDistribution;
             this.distributionJson = room.roomLayout;
-        }
-
-        /// Shared constructor logic for initializing the form components and default settings.
-        /// Hides the Edit Distribution button by default.
-        /// </summary>
-        private void genericContructor()
-        {
-            InitializeComponent();
-            buttonEditDistribution.Visible = false;
         }
 
         /// <summary>

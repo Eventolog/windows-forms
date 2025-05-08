@@ -106,6 +106,8 @@
             // checkBoxDistributionsWithSeats
             // 
             this.checkBoxDistributionsWithSeats.AutoSize = true;
+            this.checkBoxDistributionsWithSeats.Checked = true;
+            this.checkBoxDistributionsWithSeats.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDistributionsWithSeats.Location = new System.Drawing.Point(139, 230);
             this.checkBoxDistributionsWithSeats.Name = "checkBoxDistributionsWithSeats";
             this.checkBoxDistributionsWithSeats.Size = new System.Drawing.Size(15, 14);

@@ -129,8 +129,11 @@ namespace Eventology.Forms.Rooms
                     {
                         var bounds = ParseBounds(seat["Bounds"].ToString());
                         decimal price = seat["Price"].ToObject<decimal>();
+                        int row = seat["Row"].ToObject<int>();
+                        int seatNumber = seat["SeatNumber"].ToObject<int>();
+
                         int seatId = ++seatsAmount;
-                        Seat newSeat = new Seat(bounds, price, seatId);
+                        Seat newSeat = new Seat(bounds, price, seatId, row, seatNumber);
                         elements.Add(newSeat);
                         seatsExistingAmount++;
                     }
@@ -190,7 +193,9 @@ namespace Eventology.Forms.Rooms
                     {
                         Seat seat = (Seat)elem;
                         lastSelectedSeat = seat;
-                        inputPriceEdit.Value = seat.Price;
+                        numericPriceEditSeat.Value = seat.Price;
+                        numericUpDownEditRow.Value = seat.Row;
+                        numericUpDownEditSeatNumber.Value = seat.SeatNumber;
                         selectedElement = elem;
                         offset = new Point(e.X - elem.Bounds.X, e.Y - elem.Bounds.Y);
                         break;
@@ -330,7 +335,7 @@ namespace Eventology.Forms.Rooms
                         }
 
                         fillColor = Color.Red;
-                        overlayText = $"${seat.Price:F2}";  // Show seat price
+                        overlayText = $"{seat.Row}:{seat.SeatNumber}";  // Show seat price
                     }
                     else if (elem.Type == RoomElementTypes.Scenery)
                     {
@@ -392,8 +397,10 @@ namespace Eventology.Forms.Rooms
                 .Cast<Seat>() // Cast the filtered elements to Seat
                 .Select(seat => new
                 {
-                    seat.Bounds, // Only include Bounds
-                    seat.Price   // Include Price as well
+                    seat.Bounds,
+                    seat.Price,
+                    seat.Row,
+                    seat.SeatNumber
                 })
                 .ToArray(); // Convert the result to an array
 
@@ -425,6 +432,19 @@ namespace Eventology.Forms.Rooms
         }
 
         /// <summary>
+        /// Checks if a seat with the specified row and seat number exists in the elements list.
+        /// </summary>
+        /// <param name="row">The row number to check.</param>
+        /// <param name="seatNumber">The seat number to check.</param>
+        /// <returns>True if a seat with the given row and seat number exists; otherwise, false.</returns>
+        public bool SeatExists(int row, int seatNumber)
+        {
+            return elements
+                .OfType<Seat>()
+                .Any(seat => seat.Row == row && seat.SeatNumber == seatNumber);
+        }
+
+        /// <summary>
         /// Handles the Add Seat button click event
         /// Creates a new seat with the specified price and adds it to the room layout
         /// </summary>
@@ -435,12 +455,26 @@ namespace Eventology.Forms.Rooms
             seatsAmount += 1;
             seatsExistingAmount += 1;
             int seatId = seatsAmount;
-            decimal price = numericPrice.Value;
-            Element seat = new Seat(new Rectangle(150, 150, 30, 30), price, seatId);
-            qtySeat.Text = seatsExistingAmount.ToString() + " / " + this.seatsCapacity;
-            elements.Add(seat);
-            Render();
+            decimal price = numericPriceAddSeat.Value;
+            int row = (int)numericUpDownAddRow.Value;
+            int seatNumber = (int)numericUpDownAddSeatNumber.Value;
+            bool existsSeat = this.SeatExists(row, seatNumber);
+            Rectangle bounds = new Rectangle(150, 150, 30, 30);
+
+            if (existsSeat)
+            {
+                MessageBoxUtility.ShowError("Ja existeix una butaca amb aquest numbero de butaca en la fila seleccionada");
+            }
+            else
+            {
+                Element seat = new Seat(bounds, price, seatId, row, seatNumber);
+                qtySeat.Text = seatsExistingAmount.ToString() + " / " + this.seatsCapacity;
+                elements.Add(seat);
+                Render();
+            }
+           
         }
+
 
         /// <summary>
         /// Handles the Delete Seat button click event
@@ -456,7 +490,7 @@ namespace Eventology.Forms.Rooms
                 return;
             }
 
-            bool confirm = MessageBoxUtility.ShowConfirm("Estas segur vols eliminar la butaca amb id: " + lastSelectedSeat.Id + " i preu: " + lastSelectedSeat.Price);
+            bool confirm = MessageBoxUtility.ShowConfirm("Estas segur vols eliminar la butaca de la fila: " + lastSelectedSeat.Row + " i numero de butaca: " + lastSelectedSeat.SeatNumber);
             if (confirm)
             {
                 RemoveSeatById(lastSelectedSeat.Id);
@@ -485,7 +519,7 @@ namespace Eventology.Forms.Rooms
                 // Remove the found seat from the elements collection
                 elements.Remove(seatToRemove);
                 lastSelectedSeat = null;
-                inputPriceEdit.Value = 0;
+                numericPriceEditSeat.Value = 0;
                 Console.WriteLine($"Seat with ID {seatId} has been removed.");
             }
             else
@@ -509,15 +543,30 @@ namespace Eventology.Forms.Rooms
                 return;
             }
 
-            decimal newPrice = inputPriceEdit.Value;
+            decimal newPrice = numericPriceEditSeat.Value;
+            int row = (int)numericUpDownEditRow.Value;
+            int seatNumber = (int)numericUpDownEditSeatNumber.Value;
+            bool existsSeat = this.SeatExists(row, seatNumber);
+            if (existsSeat)
+            {
+                MessageBoxUtility.ShowError("Ja existeix una butaca amb aquest numbero de butaca en la fila seleccionada");
+            }
+            else
+            {
+                lastSelectedSeat.Price = newPrice;
+                lastSelectedSeat.Row = row;
+                lastSelectedSeat.SeatNumber = seatNumber;
+                Console.WriteLine($"Seat ID {lastSelectedSeat.Id} updated with new price: {newPrice}");
 
-            lastSelectedSeat.Price = newPrice;
-
-            Console.WriteLine($"Seat ID {lastSelectedSeat.Id} updated with new price: {newPrice}");
-
-            Render();
+                Render();
+            }
         }
 
+        /// <summary>
+        /// Handles clickEvent for close the edition modal, validate if is it possible due the seat amount
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if(seatsExistingAmount != seatsCapacity)
