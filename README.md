@@ -10,11 +10,6 @@
   - Can create, modify, and delete users (superadministrators, administrators, and organizers).
   - Complete management of venues and event configurations.
   
-**Administrator**:
-  - Can create and delete events and venues.
-  - Can modify data for events and venues.
-  - Cannot manage users at a higher permission level.
-  
 **Organizer**:
   - Can only create and manage their own events.
   - Cannot modify venue settings or manage users.
