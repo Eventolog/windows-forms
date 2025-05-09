@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Eventology.Forms;
 using Eventology.Utils;
+using Eventology.Forms.Rooms;
 
 /// <summary>
 /// Main application form for Eventology.

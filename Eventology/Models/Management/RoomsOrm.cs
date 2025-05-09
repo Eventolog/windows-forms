@@ -183,4 +183,3 @@ namespace Eventology.Models.Management
 
     }
 }
-}
