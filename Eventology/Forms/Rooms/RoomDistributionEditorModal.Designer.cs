@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomDistributionEditorModal));
             this.lblEventName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -389,7 +388,6 @@
             this.Controls.Add(this.roomPictureBox);
             this.Controls.Add(this.editSeatGroupbox);
             this.Controls.Add(this.groupBoxAmountSeats);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RoomDistributionEditorModal";
             this.Text = "Distribució";
             ((System.ComponentModel.ISupportInitialize)(this.numericPriceEditSeat)).EndInit();

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpsertRoomModal));
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
@@ -185,7 +184,6 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxName);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpsertRoomModal";
             this.Text = "Gestiona una Sala";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
