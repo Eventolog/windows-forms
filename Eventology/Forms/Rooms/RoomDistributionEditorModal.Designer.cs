@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomDistributionEditorModal));
             this.lblEventName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.lblEventName.BackColor = System.Drawing.Color.Transparent;
             this.lblEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEventName.ForeColor = System.Drawing.Color.White;
-            this.lblEventName.Location = new System.Drawing.Point(8, 40);
+            this.lblEventName.Location = new System.Drawing.Point(30, 53);
             this.lblEventName.Name = "lblEventName";
             this.lblEventName.Size = new System.Drawing.Size(382, 36);
             this.lblEventName.TabIndex = 30;
@@ -84,7 +85,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 17);
+            this.label4.Location = new System.Drawing.Point(30, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(207, 20);
             this.label4.TabIndex = 29;
@@ -93,7 +94,7 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(426, 416);
+            this.btnEditar.Location = new System.Drawing.Point(448, 429);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(124, 33);
             this.btnEditar.TabIndex = 28;
@@ -106,7 +107,7 @@
             this.qtySeat.AutoSize = true;
             this.qtySeat.BackColor = System.Drawing.Color.Transparent;
             this.qtySeat.ForeColor = System.Drawing.Color.White;
-            this.qtySeat.Location = new System.Drawing.Point(104, 26);
+            this.qtySeat.Location = new System.Drawing.Point(119, 26);
             this.qtySeat.Name = "qtySeat";
             this.qtySeat.Size = new System.Drawing.Size(13, 13);
             this.qtySeat.TabIndex = 27;
@@ -117,7 +118,7 @@
             this.lblSeatsAmount.AutoSize = true;
             this.lblSeatsAmount.BackColor = System.Drawing.Color.Transparent;
             this.lblSeatsAmount.ForeColor = System.Drawing.Color.White;
-            this.lblSeatsAmount.Location = new System.Drawing.Point(6, 25);
+            this.lblSeatsAmount.Location = new System.Drawing.Point(21, 25);
             this.lblSeatsAmount.Name = "lblSeatsAmount";
             this.lblSeatsAmount.Size = new System.Drawing.Size(100, 13);
             this.lblSeatsAmount.TabIndex = 26;
@@ -125,7 +126,7 @@
             // 
             // numericPriceEditSeat
             // 
-            this.numericPriceEditSeat.Location = new System.Drawing.Point(425, 238);
+            this.numericPriceEditSeat.Location = new System.Drawing.Point(447, 251);
             this.numericPriceEditSeat.Name = "numericPriceEditSeat";
             this.numericPriceEditSeat.Size = new System.Drawing.Size(121, 20);
             this.numericPriceEditSeat.TabIndex = 25;
@@ -134,7 +135,7 @@
             // 
             this.btnDeleteSeat.BackColor = System.Drawing.Color.White;
             this.btnDeleteSeat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDeleteSeat.Location = new System.Drawing.Point(8, 194);
+            this.btnDeleteSeat.Location = new System.Drawing.Point(23, 194);
             this.btnDeleteSeat.Name = "btnDeleteSeat";
             this.btnDeleteSeat.Size = new System.Drawing.Size(124, 33);
             this.btnDeleteSeat.TabIndex = 28;
@@ -144,7 +145,7 @@
             // 
             // textBoxJsonVisualizer
             // 
-            this.textBoxJsonVisualizer.Location = new System.Drawing.Point(418, 12);
+            this.textBoxJsonVisualizer.Location = new System.Drawing.Point(440, 25);
             this.textBoxJsonVisualizer.Multiline = true;
             this.textBoxJsonVisualizer.Name = "textBoxJsonVisualizer";
             this.textBoxJsonVisualizer.Size = new System.Drawing.Size(297, 156);
@@ -153,7 +154,7 @@
             // 
             // numericPriceAddSeat
             // 
-            this.numericPriceAddSeat.Location = new System.Drawing.Point(6, 55);
+            this.numericPriceAddSeat.Location = new System.Drawing.Point(21, 55);
             this.numericPriceAddSeat.Name = "numericPriceAddSeat";
             this.numericPriceAddSeat.Size = new System.Drawing.Size(120, 20);
             this.numericPriceAddSeat.TabIndex = 22;
@@ -162,7 +163,7 @@
             // 
             this.roomPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.roomPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.roomPictureBox.Location = new System.Drawing.Point(12, 183);
+            this.roomPictureBox.Location = new System.Drawing.Point(34, 196);
             this.roomPictureBox.Name = "roomPictureBox";
             this.roomPictureBox.Size = new System.Drawing.Size(400, 279);
             this.roomPictureBox.TabIndex = 20;
@@ -172,7 +173,7 @@
             // 
             this.btnAddSeat.BackColor = System.Drawing.Color.White;
             this.btnAddSeat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddSeat.Location = new System.Drawing.Point(7, 232);
+            this.btnAddSeat.Location = new System.Drawing.Point(22, 232);
             this.btnAddSeat.Name = "btnAddSeat";
             this.btnAddSeat.Size = new System.Drawing.Size(124, 33);
             this.btnAddSeat.TabIndex = 19;
@@ -190,7 +191,7 @@
             this.editSeatGroupbox.Controls.Add(this.lblRow);
             this.editSeatGroupbox.Controls.Add(this.label2);
             this.editSeatGroupbox.ForeColor = System.Drawing.Color.White;
-            this.editSeatGroupbox.Location = new System.Drawing.Point(418, 183);
+            this.editSeatGroupbox.Location = new System.Drawing.Point(440, 196);
             this.editSeatGroupbox.Name = "editSeatGroupbox";
             this.editSeatGroupbox.Size = new System.Drawing.Size(140, 279);
             this.editSeatGroupbox.TabIndex = 31;
@@ -199,7 +200,7 @@
             // 
             // numericUpDownEditSeatNumber
             // 
-            this.numericUpDownEditSeatNumber.Location = new System.Drawing.Point(8, 144);
+            this.numericUpDownEditSeatNumber.Location = new System.Drawing.Point(23, 144);
             this.numericUpDownEditSeatNumber.Minimum = new decimal(new int[] {
             1,
             0,
@@ -219,7 +220,7 @@
             this.lblSeatNumber.AutoSize = true;
             this.lblSeatNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblSeatNumber.ForeColor = System.Drawing.Color.White;
-            this.lblSeatNumber.Location = new System.Drawing.Point(6, 128);
+            this.lblSeatNumber.Location = new System.Drawing.Point(21, 128);
             this.lblSeatNumber.Name = "lblSeatNumber";
             this.lblSeatNumber.Size = new System.Drawing.Size(81, 13);
             this.lblSeatNumber.TabIndex = 12;
@@ -227,7 +228,7 @@
             // 
             // numericUpDownEditRow
             // 
-            this.numericUpDownEditRow.Location = new System.Drawing.Point(8, 103);
+            this.numericUpDownEditRow.Location = new System.Drawing.Point(23, 103);
             this.numericUpDownEditRow.Minimum = new decimal(new int[] {
             1,
             0,
@@ -247,7 +248,7 @@
             this.lblRow.AutoSize = true;
             this.lblRow.BackColor = System.Drawing.Color.Transparent;
             this.lblRow.ForeColor = System.Drawing.Color.White;
-            this.lblRow.Location = new System.Drawing.Point(6, 87);
+            this.lblRow.Location = new System.Drawing.Point(21, 87);
             this.lblRow.Name = "lblRow";
             this.lblRow.Size = new System.Drawing.Size(23, 13);
             this.lblRow.TabIndex = 10;
@@ -258,7 +259,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(5, 38);
+            this.label2.Location = new System.Drawing.Point(20, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 9;
@@ -269,7 +270,7 @@
             this.groupBoxAmountSeats.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxAmountSeats.Controls.Add(this.lblSeatsAmount);
             this.groupBoxAmountSeats.Controls.Add(this.qtySeat);
-            this.groupBoxAmountSeats.Location = new System.Drawing.Point(149, 110);
+            this.groupBoxAmountSeats.Location = new System.Drawing.Point(171, 123);
             this.groupBoxAmountSeats.Name = "groupBoxAmountSeats";
             this.groupBoxAmountSeats.Size = new System.Drawing.Size(263, 58);
             this.groupBoxAmountSeats.TabIndex = 32;
@@ -279,7 +280,7 @@
             // btnSaveDistribution
             // 
             this.btnSaveDistribution.BackColor = System.Drawing.Color.White;
-            this.btnSaveDistribution.Location = new System.Drawing.Point(14, 115);
+            this.btnSaveDistribution.Location = new System.Drawing.Point(36, 128);
             this.btnSaveDistribution.Name = "btnSaveDistribution";
             this.btnSaveDistribution.Size = new System.Drawing.Size(129, 53);
             this.btnSaveDistribution.TabIndex = 34;
@@ -298,7 +299,7 @@
             this.addSeatGroupBox.Controls.Add(this.lblRowAddSeat);
             this.addSeatGroupBox.Controls.Add(this.btnAddSeat);
             this.addSeatGroupBox.ForeColor = System.Drawing.Color.White;
-            this.addSeatGroupBox.Location = new System.Drawing.Point(575, 183);
+            this.addSeatGroupBox.Location = new System.Drawing.Point(597, 196);
             this.addSeatGroupBox.Name = "addSeatGroupBox";
             this.addSeatGroupBox.Size = new System.Drawing.Size(140, 279);
             this.addSeatGroupBox.TabIndex = 35;
@@ -310,7 +311,7 @@
             this.lblPriceAddSeat.AutoSize = true;
             this.lblPriceAddSeat.BackColor = System.Drawing.Color.Transparent;
             this.lblPriceAddSeat.ForeColor = System.Drawing.Color.White;
-            this.lblPriceAddSeat.Location = new System.Drawing.Point(6, 38);
+            this.lblPriceAddSeat.Location = new System.Drawing.Point(21, 38);
             this.lblPriceAddSeat.Name = "lblPriceAddSeat";
             this.lblPriceAddSeat.Size = new System.Drawing.Size(29, 13);
             this.lblPriceAddSeat.TabIndex = 29;
@@ -318,7 +319,7 @@
             // 
             // numericUpDownAddSeatNumber
             // 
-            this.numericUpDownAddSeatNumber.Location = new System.Drawing.Point(7, 143);
+            this.numericUpDownAddSeatNumber.Location = new System.Drawing.Point(22, 143);
             this.numericUpDownAddSeatNumber.Minimum = new decimal(new int[] {
             1,
             0,
@@ -338,7 +339,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 127);
+            this.label1.Location = new System.Drawing.Point(20, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 31;
@@ -346,7 +347,7 @@
             // 
             // numericUpDownAddRow
             // 
-            this.numericUpDownAddRow.Location = new System.Drawing.Point(7, 102);
+            this.numericUpDownAddRow.Location = new System.Drawing.Point(22, 102);
             this.numericUpDownAddRow.Minimum = new decimal(new int[] {
             1,
             0,
@@ -366,7 +367,7 @@
             this.lblRowAddSeat.AutoSize = true;
             this.lblRowAddSeat.BackColor = System.Drawing.Color.Transparent;
             this.lblRowAddSeat.ForeColor = System.Drawing.Color.White;
-            this.lblRowAddSeat.Location = new System.Drawing.Point(5, 86);
+            this.lblRowAddSeat.Location = new System.Drawing.Point(20, 86);
             this.lblRowAddSeat.Name = "lblRowAddSeat";
             this.lblRowAddSeat.Size = new System.Drawing.Size(23, 13);
             this.lblRowAddSeat.TabIndex = 29;
@@ -377,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(747, 477);
+            this.ClientSize = new System.Drawing.Size(769, 503);
             this.Controls.Add(this.addSeatGroupBox);
             this.Controls.Add(this.btnSaveDistribution);
             this.Controls.Add(this.lblEventName);
@@ -388,6 +389,7 @@
             this.Controls.Add(this.roomPictureBox);
             this.Controls.Add(this.editSeatGroupbox);
             this.Controls.Add(this.groupBoxAmountSeats);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RoomDistributionEditorModal";
             this.Text = "Distribució";
             ((System.ComponentModel.ISupportInitialize)(this.numericPriceEditSeat)).EndInit();

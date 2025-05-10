@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpsertRoomModal));
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
@@ -86,7 +87,7 @@
             this.labelCapacity.AutoSize = true;
             this.labelCapacity.BackColor = System.Drawing.Color.Transparent;
             this.labelCapacity.ForeColor = System.Drawing.Color.White;
-            this.labelCapacity.Location = new System.Drawing.Point(17, 172);
+            this.labelCapacity.Location = new System.Drawing.Point(17, 167);
             this.labelCapacity.Name = "labelCapacity";
             this.labelCapacity.Size = new System.Drawing.Size(52, 13);
             this.labelCapacity.TabIndex = 23;
@@ -97,7 +98,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 230);
+            this.label1.Location = new System.Drawing.Point(17, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 24;
@@ -108,7 +109,7 @@
             this.checkBoxDistributionsWithSeats.AutoSize = true;
             this.checkBoxDistributionsWithSeats.Checked = true;
             this.checkBoxDistributionsWithSeats.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDistributionsWithSeats.Location = new System.Drawing.Point(139, 230);
+            this.checkBoxDistributionsWithSeats.Location = new System.Drawing.Point(139, 217);
             this.checkBoxDistributionsWithSeats.Name = "checkBoxDistributionsWithSeats";
             this.checkBoxDistributionsWithSeats.Size = new System.Drawing.Size(15, 14);
             this.checkBoxDistributionsWithSeats.TabIndex = 25;
@@ -117,7 +118,7 @@
             // 
             // buttonEditDistribution
             // 
-            this.buttonEditDistribution.Location = new System.Drawing.Point(171, 226);
+            this.buttonEditDistribution.Location = new System.Drawing.Point(171, 213);
             this.buttonEditDistribution.Name = "buttonEditDistribution";
             this.buttonEditDistribution.Size = new System.Drawing.Size(107, 23);
             this.buttonEditDistribution.TabIndex = 26;
@@ -127,7 +128,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(275, 336);
+            this.buttonCancel.Location = new System.Drawing.Point(275, 271);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 27;
@@ -137,7 +138,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(368, 336);
+            this.buttonSave.Location = new System.Drawing.Point(368, 271);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 28;
@@ -147,7 +148,7 @@
             // 
             // numericUpDownCapacity
             // 
-            this.numericUpDownCapacity.Location = new System.Drawing.Point(104, 172);
+            this.numericUpDownCapacity.Location = new System.Drawing.Point(104, 165);
             this.numericUpDownCapacity.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -172,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Eventology.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(465, 376);
+            this.ClientSize = new System.Drawing.Size(465, 320);
             this.Controls.Add(this.numericUpDownCapacity);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonCancel);
@@ -184,6 +185,7 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpsertRoomModal";
             this.Text = "Gestiona una Sala";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapacity)).EndInit();
