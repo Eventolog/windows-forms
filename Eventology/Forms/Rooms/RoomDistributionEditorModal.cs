@@ -76,6 +76,8 @@ namespace Eventology.Forms.Rooms
         public RoomDistributionEditorModal(int seatsCapacity, string roomName)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             this.seatsCapacity = seatsCapacity;
             lblEventName.Text = roomName;
             scenery = new Scenery(new Rectangle(0, 0, 400, 50));

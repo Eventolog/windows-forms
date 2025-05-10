@@ -31,6 +31,7 @@ namespace Eventology.Forms.Rooms
         public UpsertRoomModal()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         /// <summary>
