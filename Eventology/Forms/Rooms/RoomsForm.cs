@@ -48,10 +48,10 @@ namespace Eventology.Forms.Rooms
             dataGridViewRooms.Columns["capacity"].HeaderText = "Capacitat";
             dataGridViewRooms.Columns["capacity"].Width = 60;
 
-            dataGridViewRooms.Columns["description"].HeaderText = "Descripcio";
+            dataGridViewRooms.Columns["description"].HeaderText = "Descripció";
             dataGridViewRooms.Columns["description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dataGridViewRooms.Columns["hasSeatingDistribution"].HeaderText = "Té distribució de seients";
+            dataGridViewRooms.Columns["hasSeatingDistribution"].HeaderText = "Té distribució?";
             dataGridViewRooms.Columns["hasSeatingDistribution"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
             // Hide specific navigation or unused columns

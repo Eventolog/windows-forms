@@ -52,10 +52,14 @@
             // 
             this.dataGridViewRooms.AllowUserToAddRows = false;
             this.dataGridViewRooms.AllowUserToDeleteRows = false;
+            this.dataGridViewRooms.AllowUserToResizeColumns = false;
+            this.dataGridViewRooms.AllowUserToResizeRows = false;
             this.dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRooms.Location = new System.Drawing.Point(65, 96);
+            this.dataGridViewRooms.MultiSelect = false;
             this.dataGridViewRooms.Name = "dataGridViewRooms";
             this.dataGridViewRooms.ReadOnly = true;
+            this.dataGridViewRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRooms.Size = new System.Drawing.Size(542, 341);
             this.dataGridViewRooms.TabIndex = 6;
             // 
