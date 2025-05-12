@@ -94,9 +94,9 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(448, 429);
+            this.btnEditar.Location = new System.Drawing.Point(447, 429);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(124, 33);
+            this.btnEditar.Size = new System.Drawing.Size(126, 33);
             this.btnEditar.TabIndex = 28;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -135,9 +135,9 @@
             // 
             this.btnDeleteSeat.BackColor = System.Drawing.Color.White;
             this.btnDeleteSeat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDeleteSeat.Location = new System.Drawing.Point(10, 194);
+            this.btnDeleteSeat.Location = new System.Drawing.Point(7, 194);
             this.btnDeleteSeat.Name = "btnDeleteSeat";
-            this.btnDeleteSeat.Size = new System.Drawing.Size(124, 33);
+            this.btnDeleteSeat.Size = new System.Drawing.Size(126, 33);
             this.btnDeleteSeat.TabIndex = 28;
             this.btnDeleteSeat.Text = "Eliminar";
             this.btnDeleteSeat.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             // 
             this.btnAddSeat.BackColor = System.Drawing.Color.White;
             this.btnAddSeat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddSeat.Location = new System.Drawing.Point(10, 233);
+            this.btnAddSeat.Location = new System.Drawing.Point(7, 233);
             this.btnAddSeat.Name = "btnAddSeat";
             this.btnAddSeat.Size = new System.Drawing.Size(124, 33);
             this.btnAddSeat.TabIndex = 19;
