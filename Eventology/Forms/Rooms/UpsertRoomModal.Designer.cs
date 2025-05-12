@@ -122,7 +122,7 @@
             this.buttonEditDistribution.Name = "buttonEditDistribution";
             this.buttonEditDistribution.Size = new System.Drawing.Size(107, 23);
             this.buttonEditDistribution.TabIndex = 26;
-            this.buttonEditDistribution.Text = "Editar distribucio";
+            this.buttonEditDistribution.Text = "Editar distribució";
             this.buttonEditDistribution.UseVisualStyleBackColor = true;
             this.buttonEditDistribution.Click += new System.EventHandler(this.buttonEditDistribution_Click);
             // 
